@@ -28,7 +28,6 @@ jobs:
 
       - name: Install and Build 🔧
         run: yarn && yarn build && yarn export
-        env: NEXT_PUBLIC_BASE_PATH: anfedu
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
