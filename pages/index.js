@@ -8,11 +8,10 @@ const useStyles = makeStyles({
   root: {
     paddingTop: 100,
     width: "100vw",
-    minHeight: "100vh",
+    height: "100vh",
     background:
       "linear-gradient(60deg, rgba(8, 8, 231, 0.7), rgba(93, 246, 158, 0.7)), url('/image/Background.jpg') no-repeat center center fixed",
     backgroundSize: "cover",
-    textAlign: "center",
     paddingTop: 275,
   },
 });

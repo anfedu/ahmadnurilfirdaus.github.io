@@ -1,16 +1,27 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Grid, Chip } from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    position: "fixed",
+    bottom: 0,
     height: 70,
     display: "flex",
-    position: "absolute",
-    bottom: 0,
+    justifyContent: "center",
+
     color: "white",
     fontSize: 15,
-    padding: "0 250px",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  linkWrapper: {
+    backgroundColor: "none",
+    borderColor: "white",
+    color: "white",
   },
 }));
 
@@ -19,7 +30,22 @@ export default function Footer() {
   return (
     <>
       <footer className={classes.root}>
-        Created by <b> Ahmad Nuril Firdaus</b>
+        <Grid container spacing={1}>
+          <Grid item lg={6}>
+            Created by <b> Ahmad Nuril Firdaus</b>
+          </Grid>
+          <Grid item lg={6} align="center">
+            <Chip
+              className={classes.linkWrapper}
+              variant="outlined"
+              label={
+                <>
+                  <GitHubIcon />
+                </>
+              }
+            />
+          </Grid>
+        </Grid>
       </footer>
     </>
   );

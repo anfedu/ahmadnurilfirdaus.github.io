@@ -5,8 +5,12 @@ import Typed from "react-typed";
 const useStyles = makeStyles((theme) => ({
   root: {
     color: "white",
-    fontSize: "35px",
+    textAlign: "center",
+    fontSize: 35,
     fontWeight: 600,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 20,
+    },
   },
 }));
 
