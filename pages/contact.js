@@ -1,9 +1,9 @@
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typed from "../components/Typed";
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: "100vw",
     height: "100vh",
@@ -12,14 +12,13 @@ const useStyles = makeStyles({
     backgroundSize: "cover",
     paddingTop: "45vh",
   },
-});
+}));
 
-export default function Home() {
+export default function contact() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Navbar />
-      <Typed />
       <Footer />
     </div>
   );
