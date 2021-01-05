@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     height: 70,
     display: "flex",
     justifyContent: "center",
-
+    alignItems: "center",
     color: "white",
     fontSize: 15,
     [theme.breakpoints.down("md")]: {

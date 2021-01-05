@@ -1,6 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Typed from "../components/home";
-import { CssBaseline } from "@material-ui/core";
 import Footer from "../components/layout/Footer";
 import Navbar from "../components/layout/Navbar";
 
@@ -20,7 +19,6 @@ export default function Home() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <Navbar />
       <Typed />
       <Footer />
