@@ -5,30 +5,36 @@ import {
   Toolbar,
   Typography,
   Button,
-  Container,
   Box,
+  IconButton,
 } from "@material-ui/core";
 import Link from "../src/Link";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
+import Brightness7Icon from "@material-ui/icons/Brightness7";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
     position: "absolute",
     top: 0,
+    width: "100%",
     background: "none",
     boxShadow: "none",
   },
   toolbar: {
-    width: "80%",
+    width: "85%",
     margin: "0 auto",
+    [theme.breakpoints.down("md")]: {
+      margin: "0 0",
+      width: "100%",
+    },
   },
   title: {
     flexGrow: 1,
     fontSize: 21,
     textDecoration: "none",
-    color: "white",
+    color: "#ddd",
     [theme.breakpoints.down("xs")]: {
-      fontSize: 16,
-      marginLeft: -39,
+      fontSize: 18,
     },
   },
   buttonLink: {
@@ -36,10 +42,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: 17,
     marginRight: theme.spacing(2),
-    color: "#ccc",
+    color: "#bbb",
     "&:hover": {
       background: "none",
-      color: "#eee",
+      color: "#ddd",
     },
   },
   linkWrapper: {
@@ -49,10 +55,24 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonLinkActive: {
     color: "#fff",
+    "&:hover": {
+      color: "#fff",
+    },
+  },
+  iconLight: {
+    color: "#ccc",
+    cursor: "pointer",
+    fontSize: 31,
+    "&:hover": {
+      color: "yellow",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 25,
+    },
   },
 }));
 
-export default function Navbar() {
+export default function Navbar({ toggleDark, theme }) {
   const classes = useStyles();
 
   return (
@@ -67,47 +87,62 @@ export default function Navbar() {
         >
           <b>Ahmad Nuril Firdaus</b>
         </Typography>
-        <Box className={classes.linkWrapper}>
-          <Button
-            className={classes.buttonLink}
-            activeClassName={classes.buttonLinkActive}
-            component={Link}
-            naked
-            href="/"
-            color="inherit"
-          >
-            Home
-          </Button>
-          <Button
-            className={classes.buttonLink}
-            activeClassName={classes.buttonLinkActive}
-            component={Link}
-            naked
-            href="/experience"
-            color="inherit"
-          >
-            Experience
-          </Button>
-          <Button
-            className={classes.buttonLink}
-            activeClassName={classes.buttonLinkActive}
-            component={Link}
-            naked
-            href="/portfolio"
-            color="inherit"
-          >
-            Portfolio
-          </Button>
-          <Button
-            component={Link}
-            activeClassName={classes.buttonLinkActive}
-            href="/contact"
-            naked
-            className={classes.buttonLink}
-            color="inherit"
-          >
-            Contact
-          </Button>
+        <Box>
+          <span className={classes.linkWrapper}>
+            <Button
+              className={classes.buttonLink}
+              activeClassName={classes.buttonLinkActive}
+              component={Link}
+              naked
+              href="/"
+              color="inherit"
+            >
+              Home
+            </Button>
+            <Button
+              className={classes.buttonLink}
+              activeClassName={classes.buttonLinkActive}
+              component={Link}
+              naked
+              href="/about"
+              color="inherit"
+            >
+              About
+            </Button>
+            <Button
+              className={classes.buttonLink}
+              activeClassName={classes.buttonLinkActive}
+              component={Link}
+              naked
+              href="/portfolio"
+              color="inherit"
+            >
+              Portfolio
+            </Button>
+            <Button
+              component={Link}
+              activeClassName={classes.buttonLinkActive}
+              href="/contact"
+              naked
+              className={classes.buttonLink}
+              color="inherit"
+            >
+              Contact
+            </Button>
+          </span>
+          <IconButton style={{ padding: "0 0" }}>
+            {theme === "light" ? (
+              <Brightness4Icon
+                className={classes.iconLight}
+                onClick={toggleDark}
+              />
+            ) : (
+              <Brightness7Icon
+                className={classes.iconLight}
+                onClick={toggleDark}
+              />
+            )}
+          </IconButton>
         </Box>
       </Toolbar>
     </AppBar>

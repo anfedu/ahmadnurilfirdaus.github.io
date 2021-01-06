@@ -4,12 +4,13 @@ import Typed from "react-typed";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    color: "white",
+    color: "#ccc",
     textAlign: "center",
     fontSize: 35,
     fontWeight: 600,
     [theme.breakpoints.down("xs")]: {
-      fontSize: 20,
+      fontSize: 25,
+      padding: "0 20px",
     },
   },
 }));

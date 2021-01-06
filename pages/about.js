@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
 
-export default function contact() {
+export default function about() {
   return <Layout></Layout>;
 }

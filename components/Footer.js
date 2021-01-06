@@ -27,20 +27,29 @@ const useStyles = makeStyles((theme) => ({
   },
   iconGh: {
     color: "#aaa",
+    padding: "3px 3px",
+    marginInline: 10,
     "&:hover": {
-      color: "#000",
+      backgroundColor: "#000",
+      color: "white",
     },
   },
   iconFb: {
     color: "#aaa",
+    padding: "3px 3px",
+    marginInline: 10,
     "&:hover": {
-      color: "#6BC6FA",
+      backgroundColor: "#439FFF",
+      color: "white",
     },
   },
   iconWa: {
     color: "#aaa",
+    padding: "3px 3px",
+    marginInline: 10,
     "&:hover": {
-      color: "#54F36C",
+      backgroundColor: "#54F36C",
+      color: "white",
     },
   },
   footer: {
@@ -65,17 +74,26 @@ export default function Footer() {
           variant="outlined"
           label={
             <>
-              <IconButton component={Link} href="http://github.com/anfedu">
-                <GitHubIcon className={classes.iconGh} />
-              </IconButton>
-              <IconButton component={Link} href="https://wasap.at/qcib7h">
-                <WhatsAppIcon className={classes.iconWa} />
+              <IconButton
+                className={classes.iconGh}
+                component={Link}
+                href="http://github.com/anfedu"
+              >
+                <GitHubIcon />
               </IconButton>
               <IconButton
+                className={classes.iconWa}
+                component={Link}
+                href="https://wasap.at/qcib7h"
+              >
+                <WhatsAppIcon />
+              </IconButton>
+              <IconButton
+                className={classes.iconFb}
                 component={Link}
                 href="https://web.facebook.com/profile.php?id=100009305915205"
               >
-                <FacebookIcon className={classes.iconFb} />
+                <FacebookIcon />
               </IconButton>
             </>
           }
