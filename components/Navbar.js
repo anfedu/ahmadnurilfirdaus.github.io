@@ -9,8 +9,8 @@ import {
   IconButton,
 } from "@material-ui/core";
 import Link from "../src/Link";
+import WbSunnyIcon from "@material-ui/icons/WbSunny";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
-import Brightness7Icon from "@material-ui/icons/Brightness7";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonLink: {
     textTransform: "none",
-    fontWeight: "bold",
     fontSize: 17,
+    fontWeight: 550,
     marginRight: theme.spacing(2),
     color: "#bbb",
     "&:hover": {
@@ -62,17 +62,28 @@ const useStyles = makeStyles((theme) => ({
   iconLight: {
     color: "#ccc",
     cursor: "pointer",
-    fontSize: 31,
+    fontSize: 25,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 21,
+    },
     "&:hover": {
       color: "yellow",
     },
+  },
+  iconDark: {
+    color: "#ccc",
+    cursor: "pointer",
+    fontSize: 25,
     [theme.breakpoints.down("xs")]: {
-      fontSize: 25,
+      fontSize: 21,
+    },
+    "&:hover": {
+      color: "#eee",
     },
   },
 }));
 
-export default function Navbar({ toggleDark, theme }) {
+export default function Navbar({ theme, toggleDarkTheme }) {
   const classes = useStyles();
 
   return (
@@ -95,7 +106,6 @@ export default function Navbar({ toggleDark, theme }) {
               component={Link}
               naked
               href="/"
-              color="inherit"
             >
               Home
             </Button>
@@ -105,7 +115,6 @@ export default function Navbar({ toggleDark, theme }) {
               component={Link}
               naked
               href="/about"
-              color="inherit"
             >
               About
             </Button>
@@ -115,7 +124,6 @@ export default function Navbar({ toggleDark, theme }) {
               component={Link}
               naked
               href="/portfolio"
-              color="inherit"
             >
               Portfolio
             </Button>
@@ -125,24 +133,27 @@ export default function Navbar({ toggleDark, theme }) {
               href="/contact"
               naked
               className={classes.buttonLink}
-              color="inherit"
             >
               Contact
             </Button>
           </span>
-          <IconButton style={{ padding: "0 0" }}>
-            {theme === "light" ? (
-              <Brightness4Icon
-                className={classes.iconLight}
-                onClick={toggleDark}
-              />
+          <span>
+            {theme.palette.type === "light" ? (
+              <IconButton
+                style={{ padding: "0 0", marginRight: 10 }}
+                onClick={toggleDarkTheme}
+              >
+                <Brightness4Icon className={classes.iconDark} />
+              </IconButton>
             ) : (
-              <Brightness7Icon
-                className={classes.iconLight}
-                onClick={toggleDark}
-              />
+              <IconButton
+                style={{ padding: "0 0", marginRight: 10 }}
+                onClick={toggleDarkTheme}
+              >
+                <WbSunnyIcon className={classes.iconLight} />
+              </IconButton>
             )}
-          </IconButton>
+          </span>
         </Box>
       </Toolbar>
     </AppBar>

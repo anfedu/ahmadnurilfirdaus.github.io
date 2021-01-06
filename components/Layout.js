@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkContext } from "../context/DarkMode";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import {
   makeStyles,
-  createMuiTheme,
   MuiThemeProvider,
+  createMuiTheme,
 } from "@material-ui/core/styles";
-import { Button, Card } from "@material-ui/core";
+import BottomNavigation from "./BottomNavigation";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   light: {
     width: "100vw",
     height: "100vh",
@@ -29,34 +30,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Layout({ children }) {
   const classes = useStyles();
-  // We keep the theme in app state
-  const [theme, setTheme] = React.useState({
-    palette: {
-      type: "light",
-    },
-  });
+  const context = useContext(DarkContext);
+  const { theme, toggleDarkTheme } = context;
 
-  // we change the palette type of the theme in state
-  const toggleDarkTheme = () => {
-    let newPaletteType = theme.palette.type === "light" ? "dark" : "light";
-    setTheme({
-      palette: {
-        type: newPaletteType,
-      },
-    });
-  };
+  const darkThemeClass =
+    theme.palette.type === "light" ? classes.light : classes.dark;
 
   // we generate a MUI-theme from state's theme object
   const muiTheme = createMuiTheme(theme);
-  const darkTheme =
-    theme.palette.type === "light" ? classes.light : classes.dark;
 
-  // the mui theme is used in the themeProvider.
   return (
     <MuiThemeProvider theme={muiTheme}>
-      <div className={darkTheme}>
-        <Navbar toggleDark={toggleDarkTheme} theme={theme.palette.type} />
+      <div className={darkThemeClass}>
+        <Navbar theme={theme} toggleDarkTheme={toggleDarkTheme} />
         <main>{children}</main>
+        <BottomNavigation />
         <Footer />
       </div>
     </MuiThemeProvider>
