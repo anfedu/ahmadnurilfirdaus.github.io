@@ -14,7 +14,7 @@ import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
-    position: "absolute",
+    position: "relative",
     top: 0,
     width: "100%",
     background: "none",

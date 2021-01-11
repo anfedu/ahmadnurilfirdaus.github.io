@@ -5,15 +5,16 @@ import Link from "../src/Link";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import FacebookIcon from "@material-ui/icons/Facebook";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     margin: "0 auto",
-    position: "fixed",
-    bottom: 0,
     height: 70,
     fontSize: 15,
+    display: "flex",
+    alignItems: "center",
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   footer: {
-    width: "80%",
+    width: "82%",
     margin: "0 auto",
     display: "flex",
     justifyContent: "space-between",
@@ -63,8 +64,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
   const classes = useStyles();
+  const router = useRouter();
   return (
-    <div className={classes.root}>
+    <div
+      className={classes.root}
+      style={{
+        position: router.pathname === "/about" ? "relative" : "fixed",
+        bottom: 0,
+      }}
+    >
       <footer className={classes.footer}>
         <Typography variant="body1" style={{ color: "#ccc" }}>
           Created by <b> Ahmad Nuril Firdaus</b>

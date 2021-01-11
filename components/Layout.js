@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
     background:
       "linear-gradient(60deg, rgba(8, 8, 231, 0.7),  rgba(7, 178, 54, 0.7)), url('/image/Background.jpg') no-repeat center center fixed",
     backgroundSize: "cover",
-    paddingTop: "43vh",
+    overflowX: "hidden",
   },
   dark: {
     width: "100vw",
@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
     background:
       "linear-gradient(to bottom, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0.8)), url('/image/Background.jpg') no-repeat center center fixed",
     backgroundSize: "cover",
-    paddingTop: "43vh",
+    overflowX: "hidden",
   },
 }));
 
