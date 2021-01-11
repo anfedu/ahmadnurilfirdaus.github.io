@@ -1,8 +1,8 @@
 {
-  "name": "anfedu.github.io",
+  "name": "ahmad-nuril-firdaus.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anfedu.github.io",
+  "homepage": "https://ahmad-nuril-firdaus.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
