@@ -1,6 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Box, Card } from "@material-ui/core";
+import { Typography, Box, Card, Avatar, Grid, Button } from "@material-ui/core";
+import Link from "../src/Link";
+
+const experience = [
+  {
+    year: "2019",
+    title: "Physics Teacher",
+    body:
+      "Unacademy is an Indian online education technology company based in Bangalore. It was originally created as a YouTube channel in 2010 by Gaurav Munjal (wikipedia), My experience is as physics teacher in",
+    link: "https://unacademy.com/lesson/letihan-soal-3/4DT1HCL7",
+    linkTitle: "unacademy",
+  },
+  {
+    year: "2020",
+    title: "Full Stack Developer",
+    body:
+      "Mejik utama sugiharta is software house company based in south of jakarta, My work in this company as front end developer for three month, you can see the company profile on ",
+    link: "https://microgen.mejik.id/",
+    linkTitle: "mejik",
+  },
+];
+
+const about = [
+  {
+    body:
+      "My name is Ahmad Nuril Firdaus a web and mobile developer since 2020",
+  },
+  {
+    body:
+      "I was born in Jember East Java, I studied and earned a bachelor of physics education at the university of Jember",
+  },
+  {
+    body:
+      "In 2020 I took coding training as a full stack javascript, Finally I love everything about javascript",
+  },
+  {
+    body:
+      "It's fun to build apps with modern tools like react js, next js, react native, Node js, express js, graphql, mongo db, apollo and many more",
+  },
+];
 
 const useStyles = makeStyles((themes) => ({
   timeLine: {
@@ -11,7 +50,7 @@ const useStyles = makeStyles((themes) => ({
       content: "''",
       position: "absolute",
       height: "100%",
-      border: "1px solid tan",
+      border: "1px solid aquamarine",
       right: "40px",
       top: 0,
     },
@@ -31,9 +70,9 @@ const useStyles = makeStyles((themes) => ({
 
   timeLineItem: {
     padding: "1rem",
-    borderBottom: "2px solid tan",
+    borderBottom: "2px solid aquamarine",
     position: "relative",
-    margin: "1rem 3rem 1rem 1rem",
+    margin: "1rem 1rem 1rem 1rem",
     clear: "both",
     "&:after": {
       content: "''",
@@ -44,8 +83,6 @@ const useStyles = makeStyles((themes) => ({
       position: "absolute",
       right: "-0.625rem",
       top: "calc(50% - 5px)",
-      borderStyle: "solid",
-      borderColor: "tomato tomato transparent transparent",
       borderWith: "0.625rem",
       transform: "rotate(45deg)",
     },
@@ -55,23 +92,25 @@ const useStyles = makeStyles((themes) => ({
       "&:nth-of-type(2n)": {
         float: "right",
         margin: "1rem",
-        borderColor: "tan",
+        borderColor: "aquamarine",
       },
       "&:nth-of-type(2n):before": {
         right: "auto",
         left: "-0.625rem",
-        borderColor: "transparent transparent tomato tomato",
+        borderColor: "transparent transparent #bbb #bbb",
       },
     },
   },
   timeLineYear: {
+    borderRadius: 23,
+    border: "none",
     textAlign: "center",
     maxWidth: "9.375rem",
     margin: "0 3rem 0 auto",
-    fontSize: "1.8rem",
-    background: "tomato",
-    lineHeight: 1,
-    padding: "0.5rem 0 1rem",
+    fontSize: 19,
+    background: "#aaa",
+    color: "white",
+    padding: "0.5rem 1rem",
     "&:before": {
       display: "none",
     },
@@ -88,114 +127,136 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   heading: {
-    color: "tomato",
+    color: "#888",
     padding: "3rem 0",
-    textTransform: "uppercase",
+    fontWeight: "bold",
   },
   subHeading: {
     padding: "0",
-    textTransform: "uppercase",
+    color: "#888",
+    fontWeight: "bold",
+  },
+  body2: {
+    textAlign: "justify",
+    lineHeight: 1.3,
+  },
+  mainContainer: {
+    borderRadius: 0,
+    paddingBottom: 100,
+    overflowY: "scroll",
+    boxShadow: "none",
+    opacity: 0.9,
+    maxHeight: "80vh",
+    minHeight: "80vh",
+    "&::-webkit-scrollbar": {
+      width: "0.4em",
+    },
+    "&::-webkit-scrollbar-track": {
+      boxShadow: "none",
+      webkitBoxShadow: "none",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "#bbb",
+      outline: "none",
+      borderRadius: 30,
+    },
+    [themes.breakpoints.down("md")]: {
+      maxHeight: "100vh",
+      minHeight: "100vh",
+      marginBottom: 70,
+    },
   },
 }));
 
 export default function Resume() {
   const classes = useStyles();
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = async () => {
+    setLoading(true);
+    const file = await api.get("/api/url");
+    saveFileAs(file, "somefile.txt");
+    setLoading(false);
+  };
   return (
     <Card component="header" className={classes.mainContainer}>
+      <Box
+        style={{
+          height: "80vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "0 30px",
+        }}
+      >
+        <Grid container spacing={3} justify="center">
+          <Grid item lg={2} sm={12} align="center">
+            <Typography variant="body2">
+              <Avatar
+                style={{ width: 190, height: 190, marginBottom: 10 }}
+                src="/image/profile.png"
+              />
+            </Typography>
+            <Button
+              variant="contained"
+              color="secondary"
+              style={{
+                textTransform: "none",
+                width: 130,
+                fontWeight: "bold",
+                borderRadius: 23,
+                boxShadow: "none",
+              }}
+            >
+              Certificate
+            </Button>
+          </Grid>
+          <Grid item lg={6} md={12}>
+            {about.map((data, index) => (
+              <>
+                <Typography key={index} variant="body1">
+                  {data.body}
+                </Typography>
+                <br />
+              </>
+            ))}
+          </Grid>
+        </Grid>
+      </Box>
       <Typography variant="h4" align="center" className={classes.heading}>
-        Working experience
+        Working Experience
       </Typography>
       <Box component="div" className={classes.timeLine}>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2020
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            aligh="center"
-            className={classes.subHeading}
-          >
-            Web design
-          </Typography>
-          <Typography
-            aligh="center"
-            variant="body1"
-            style={{ color: "tomato" }}
-          >
-            Company name where worked
-          </Typography>
-          <Typography
-            aligh="center"
-            variant="subtitle1"
-            style={{ color: "tan" }}
-          >
-            Consectetur illum maxime in id debitis Ea rem nihil nihil beatae nam
-            expedita. Quisquam cum id enim et harum. Dicta
-          </Typography>
-        </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2020
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            aligh="center"
-            className={classes.subHeading}
-          >
-            Web design
-          </Typography>
-          <Typography
-            aligh="center"
-            variant="body1"
-            style={{ color: "tomato" }}
-          >
-            Company name where worked
-          </Typography>
-          <Typography
-            aligh="center"
-            variant="subtitle1"
-            style={{ color: "tan" }}
-          >
-            Consectetur illum maxime in id debitis Ea rem nihil nihil beatae nam
-            expedita. Quisquam cum id enim et harum. Dicta
-          </Typography>
-        </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2020
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            aligh="center"
-            className={classes.subHeading}
-          >
-            Web design
-          </Typography>
-          <Typography
-            aligh="center"
-            variant="body1"
-            style={{ color: "tomato" }}
-          >
-            Company name where worked
-          </Typography>
-          <Typography
-            aligh="center"
-            variant="subtitle1"
-            style={{ color: "tan" }}
-          >
-            Consectetur illum maxime in id debitis Ea rem nihil nihil beatae nam
-            expedita. Quisquam cum id enim et harum. Dicta
-          </Typography>
-        </Box>
+        {experience.map((data, index) => (
+          <>
+            <Typography
+              variant="h2"
+              className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+              key={index}
+            >
+              {data.year}
+            </Typography>
+            <Box component="div" className={classes.timeLineItem}>
+              <Typography
+                variant="h5"
+                aligh="center"
+                className={classes.subHeading}
+              >
+                {data.title}
+              </Typography>
+              <Typography
+                aligh="center"
+                variant="body2"
+                className={classes.body2}
+              >
+                {data.body}{" "}
+                <Link style={{ color: "orange" }} href={data.link}>
+                  {data.linkTitle}
+                </Link>
+              </Typography>
+            </Box>
+          </>
+        ))}
       </Box>
     </Card>
   );

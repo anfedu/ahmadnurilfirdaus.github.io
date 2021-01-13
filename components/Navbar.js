@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import Link from "../src/Link";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
+import Brightness3Icon from "@material-ui/icons/Brightness3";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     fontSize: 21,
     textDecoration: "none",
-    color: "#ddd",
+    color: "#eee",
     [theme.breakpoints.down("xs")]: {
       fontSize: 18,
     },
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 17,
     fontWeight: 550,
     marginRight: theme.spacing(2),
-    color: "#bbb",
+    color: "#ddd",
     "&:hover": {
       background: "none",
       color: "#ddd",
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   buttonLinkActive: {
     color: "#fff",
     "&:hover": {
-      color: "#fff",
+      color: "#eee",
     },
   },
   iconLight: {
@@ -67,18 +67,19 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 21,
     },
     "&:hover": {
-      color: "yellow",
+      color: "springgreen",
     },
   },
   iconDark: {
-    color: "#ccc",
+    color: "#eee",
     cursor: "pointer",
+    transform: "rotate(30deg)",
     fontSize: 25,
     [theme.breakpoints.down("xs")]: {
       fontSize: 21,
     },
     "&:hover": {
-      color: "#eee",
+      color: "#fff",
     },
   },
 }));
@@ -143,7 +144,7 @@ export default function Navbar({ theme, toggleDarkTheme }) {
                 style={{ padding: "0 0", marginRight: 10 }}
                 onClick={toggleDarkTheme}
               >
-                <Brightness4Icon className={classes.iconDark} />
+                <Brightness3Icon className={classes.iconDark} />
               </IconButton>
             ) : (
               <IconButton

@@ -14,17 +14,19 @@ const useStyles = makeStyles(() => ({
     width: "100vw",
     height: "100vh",
     background:
-      "linear-gradient(60deg, rgba(8, 8, 231, 0.7),  rgba(7, 178, 54, 0.7)), url('/image/Background.jpg') no-repeat center center fixed",
+      "linear-gradient(60deg, rgba(52, 118, 207, 0.7), rgba(51, 200, 118, 0.7)), url('/image/Background.jpg') no-repeat center center fixed",
     backgroundSize: "cover",
     overflowX: "hidden",
+    overflowY: "hidden",
   },
   dark: {
     width: "100vw",
     height: "100vh",
     background:
-      "linear-gradient(to bottom, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0.8)), url('/image/Background.jpg') no-repeat center center fixed",
+      "linear-gradient(to bottom, rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.8)), url('/image/Background.jpg') no-repeat center center fixed",
     backgroundSize: "cover",
     overflowX: "hidden",
+    overflowY: "hidden",
   },
 }));
 

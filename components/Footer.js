@@ -21,13 +21,13 @@ const useStyles = makeStyles((theme) => ({
   },
   linkWrapper: {
     backgroundColor: "none",
-    borderColor: "#aaa",
-    color: "#aaa",
+    borderColor: "#eee",
+    color: "#eee",
     height: 40,
     borderRadius: 21,
   },
   iconGh: {
-    color: "#aaa",
+    color: "#eee",
     padding: "3px 3px",
     marginInline: 10,
     "&:hover": {
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconFb: {
-    color: "#aaa",
+    color: "#eee",
     padding: "3px 3px",
     marginInline: 10,
     "&:hover": {
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconWa: {
-    color: "#aaa",
+    color: "#eee",
     padding: "3px 3px",
     marginInline: 10,
     "&:hover": {
@@ -69,12 +69,12 @@ export default function Footer() {
     <div
       className={classes.root}
       style={{
-        position: router.pathname === "/about" ? "relative" : "fixed",
+        position: "fixed",
         bottom: 0,
       }}
     >
       <footer className={classes.footer}>
-        <Typography variant="body1" style={{ color: "#ccc" }}>
+        <Typography variant="body1" style={{ color: "#eee" }}>
           Created by <b> Ahmad Nuril Firdaus</b>
         </Typography>
         <Chip
