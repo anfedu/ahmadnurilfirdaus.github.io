@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[15],{AGzW:function(n,o,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/portfolio",function(){return t("eAkX")}])},eAkX:function(n,o,t){"use strict";t.r(o),t.d(o,"default",(function(){return i}));var u=t("nKUr"),_=t("5Yp1");function i(){return Object(u.jsx)(_.a,{})}}},[["AGzW",0,2,1,4,3,5,6]]]);
