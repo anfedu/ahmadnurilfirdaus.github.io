@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import Link from "../src/Link";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
-import NightsStayIcon from "@material-ui/icons/NightsStay";
+import Brightness2Icon from "@material-ui/icons/Brightness2";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     width: "66%",
     margin: "0 auto",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       margin: "0 0",
       width: "100%",
     },
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 17,
     fontWeight: 550,
     marginRight: theme.spacing(2),
-    color: "#ddd",
+    color: "#ccc",
     "&:hover": {
       background: "none",
       color: "#ddd",
@@ -56,9 +56,6 @@ const useStyles = makeStyles((theme) => ({
   buttonLinkActive: {
     color: "#fff",
     height: 36,
-    boxShadow: "none",
-    borderRadius: 25,
-    border: "2px solid #ccc",
     "&:hover": {
       color: "#eee",
     },
@@ -77,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
   iconDark: {
     color: "#eee",
     cursor: "pointer",
-    transform: "rotate(250deg)",
+    transform: "rotate(30deg)",
     fontSize: 25,
     [theme.breakpoints.down("xs")]: {
       fontSize: 21,
@@ -148,7 +145,7 @@ export default function Navbar({ theme, toggleDarkTheme }) {
                 style={{ padding: "0 0", marginRight: 10 }}
                 onClick={toggleDarkTheme}
               >
-                <NightsStayIcon className={classes.iconDark} />
+                <Brightness2Icon className={classes.iconDark} />
               </IconButton>
             ) : (
               <IconButton

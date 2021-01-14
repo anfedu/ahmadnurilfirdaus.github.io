@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Box, Card, Avatar, Grid, Button } from "@material-ui/core";
 import Link from "../src/Link";
@@ -143,11 +143,10 @@ const useStyles = makeStyles((themes) => ({
   mainContainer: {
     borderRadius: 0,
     paddingBottom: 30,
-    overflowY: "scroll",
+    overflowY: "auto",
     boxShadow: "none",
     opacity: 0.9,
-    maxHeight: "80vh",
-    minHeight: "80vh",
+    maxHeight: "81vh",
     "&::-webkit-scrollbar": {
       width: "0.4em",
     },
@@ -172,14 +171,7 @@ const useStyles = makeStyles((themes) => ({
 
 export default function Resume() {
   const classes = useStyles();
-  const [loading, setLoading] = useState(false);
 
-  const handleClick = async () => {
-    setLoading(true);
-    const file = await api.get("/api/url");
-    saveFileAs(file, "somefile.txt");
-    setLoading(false);
-  };
   return (
     <Card component="header" className={classes.mainContainer}>
       <Box
@@ -193,12 +185,10 @@ export default function Resume() {
       >
         <Grid container spacing={3} justify="center">
           <Grid item lg={2} sm={12} align="center">
-            <Typography variant="body2">
-              <Avatar
-                style={{ width: 190, height: 190, marginBottom: 10 }}
-                src="/image/profile.png"
-              />
-            </Typography>
+            <Avatar
+              style={{ width: 190, height: 190, marginBottom: 10 }}
+              src="/image/profile.png"
+            />
             <Button
               variant="contained"
               style={{
@@ -221,12 +211,10 @@ export default function Resume() {
           </Grid>
           <Grid item lg={6} md={12}>
             {about.map((data, index) => (
-              <>
-                <Typography key={index} variant="body1">
-                  {data.body}
-                </Typography>
+              <div key={index}>
+                <Typography variant="body1">{data.body}</Typography>
                 <br />
-              </>
+              </div>
             ))}
           </Grid>
         </Grid>
@@ -237,7 +225,7 @@ export default function Resume() {
       </Typography>
       <Box component="div" className={classes.timeLine}>
         {experience.map((data, index) => (
-          <>
+          <React.Fragment key={index}>
             <Typography
               variant="h2"
               className={`${classes.timeLineYear} ${classes.timeLineItem}`}
@@ -264,7 +252,7 @@ export default function Resume() {
                 </Link>
               </Typography>
             </Box>
-          </>
+          </React.Fragment>
         ))}
       </Box>
     </Card>

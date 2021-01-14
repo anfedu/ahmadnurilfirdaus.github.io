@@ -119,7 +119,7 @@ export default function Footer() {
               <IconButton
                 className={classes.iconTg}
                 component={Link}
-                href="https://msng.link/o/?082244956781=tg"
+                href="https://t.me/ahmadnurilfirdaus"
                 target="_blank"
               >
                 <TelegramIcon />

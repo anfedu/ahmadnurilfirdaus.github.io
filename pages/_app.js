@@ -29,7 +29,6 @@ export default function MyApp(props) {
       </Head>
       <DarkProvider>
         <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <NoSsr>
             <CssBaseline />
             <Component {...pageProps} />

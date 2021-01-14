@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DarkContext } from "../context/DarkMode";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -36,9 +36,8 @@ export default function Layout({ children }) {
   const { theme, toggleDarkTheme } = context;
 
   const darkThemeClass =
-    theme.palette.type === "light" ? classes.light : classes.dark;
+    theme.palette.type === "dark" ? classes.dark : classes.light;
 
-  // we generate a MUI-theme from state's theme object
   const muiTheme = createMuiTheme(theme);
 
   return (

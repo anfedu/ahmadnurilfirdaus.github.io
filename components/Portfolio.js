@@ -8,6 +8,7 @@ import {
   Grid,
   CardActions,
   Button,
+  Grow,
 } from "@material-ui/core";
 import Link from "../src/Link";
 
@@ -15,11 +16,10 @@ const useStyles = makeStyles((themes) => ({
   mainContainer: {
     borderRadius: 0,
     paddingBottom: 30,
-    overflowY: "scroll",
+    overflowY: "auto",
     boxShadow: "none",
     opacity: 0.9,
-    maxHeight: "80vh",
-    minHeight: "80vh",
+    minHeight: "81vh",
     "&::-webkit-scrollbar": {
       width: "0.4em",
     },
@@ -38,13 +38,13 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   mobile: {
-    [themes.breakpoints.up("lg")]: {
+    [themes.breakpoints.up("md")]: {
       display: "none",
     },
   },
   desktop: {
     width: 500,
-    [themes.breakpoints.down("md")]: {
+    [themes.breakpoints.down("sm")]: {
       display: "none",
     },
   },
@@ -64,68 +64,75 @@ export default function Resume() {
           padding: "0 30px",
         }}
       >
-        <Card className={classes.mobile}>
-          <img src="/image/socialapp.png" style={{ width: "100%" }} />
-          <CardContent>
-            <Typography variant="body1" style={{ textAlign: "justify" }}>
-              Social app is web application allows you to create and delete
-              post, you can also like or unlike post and you can create comment
-              to another user post
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button
-              variant="contained"
-              color="secondary"
-              fullWidth
-              component={Link}
-              target="_blank"
-              href="http://anf-socialapp.netlify.app"
-              style={{
-                textTransform: "none",
-                color: "white",
-                textDecoration: "none",
-                fontWeight: "bold",
-              }}
-            >
-              Live Preview
-            </Button>
-          </CardActions>
-        </Card>
-        <Card className={classes.desktop}>
-          <Grid container spacing={0}>
-            <Grid item lg={5}>
-              <img src="/image/socialappmobile.png" style={{ width: "100%" }} />
+        <Grow in={true} timeout={{ enter: 1500, exit: 1000 }}>
+          <Card className={classes.mobile}>
+            <img src="/image/socialapp.png" style={{ width: "100%" }} />
+            <CardContent>
+              <Typography variant="body1" style={{ textAlign: "justify" }}>
+                SocialApp is web application, that allows you to create and
+                delete post, you can also like or unlike post and you can create
+                comment to another user post
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button
+                variant="contained"
+                color="secondary"
+                fullWidth
+                component={Link}
+                target="_blank"
+                href="http://anf-socialapp.netlify.app"
+                style={{
+                  textTransform: "none",
+                  color: "white",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                Live Preview
+              </Button>
+            </CardActions>
+          </Card>
+        </Grow>
+        <Grow in={true} timeout={{ enter: 1500, exit: 1000 }}>
+          <Card className={classes.desktop}>
+            <Grid container spacing={0}>
+              <Grid item lg={5} md={5}>
+                <img
+                  src="/image/socialappmobile.png"
+                  style={{ width: "100%" }}
+                />
+              </Grid>
+              <Grid item lg={7} md={7}>
+                <CardContent>
+                  <Typography variant="body1" style={{ textAlign: "justify" }}>
+                    Social app is web application allows you to create and
+                    delete post, you can also like or unlike post and you can
+                    create comment to another user post
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    variant="contained"
+                    fullWidth
+                    component={Link}
+                    target="_blank"
+                    href="http://anf-socialapp.netlify.app"
+                    style={{
+                      textTransform: "none",
+                      color: "white",
+                      textDecoration: "none",
+                      fontWeight: "bold",
+                      backgroundColor: "springgreen",
+                    }}
+                  >
+                    Live Preview
+                  </Button>
+                </CardActions>
+              </Grid>
             </Grid>
-            <Grid item lg={7}>
-              <CardContent>
-                <Typography variant="body1" style={{ textAlign: "justify" }}>
-                  Social app is web application allows you to create and delete
-                  post, you can also like or unlike post and you can create
-                  comment to another user post
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button
-                  variant="contained"
-                  fullWidth
-                  component={Link}
-                  target="_blank"
-                  href="http://anf-socialapp.netlify.app"
-                  style={{
-                    textTransform: "none",
-                    color: "white",
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                    backgroundColor: "springgreen",
-                  }}
-                >
-                  Live Preview
-                </Button>
-              </CardActions>
-            </Grid>
-          </Grid>
-        </Card>
+          </Card>
+        </Grow>
       </Box>
     </Card>
   );
