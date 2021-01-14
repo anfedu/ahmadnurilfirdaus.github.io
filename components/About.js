@@ -1,6 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Box, Card, Avatar, Grid, Button } from "@material-ui/core";
+import {
+  Typography,
+  Box,
+  Card,
+  Avatar,
+  Grid,
+  Button,
+  Grow,
+} from "@material-ui/core";
 import Link from "../src/Link";
 
 const experience = [
@@ -185,34 +193,40 @@ export default function Resume() {
       >
         <Grid container spacing={3} justify="center">
           <Grid item lg={2} sm={12} align="center">
-            <Avatar
-              style={{ width: 190, height: 190, marginBottom: 10 }}
-              src="/image/profile.png"
-            />
-            <Button
-              variant="contained"
-              style={{
-                textTransform: "none",
-                width: 130,
-                fontWeight: "bold",
-                borderRadius: 23,
-                boxShadow: "none",
-                backgroundColor: "springgreen",
-                color: "white",
-                "&:hover": {
-                  backgroundColor: "aqua",
-                },
-              }}
-              download
-              href="/anf.pdf"
-            >
-              Certificate
-            </Button>
+            <Grow in={true} timeout={{ enter: 1100 }}>
+              <Avatar
+                style={{ width: 190, height: 190, marginBottom: 10 }}
+                src="/image/profile.png"
+              />
+            </Grow>
+            <Grow in={true} timeout={{ enter: 1000 }}>
+              <Button
+                variant="contained"
+                style={{
+                  textTransform: "none",
+                  width: 130,
+                  fontWeight: "bold",
+                  borderRadius: 23,
+                  boxShadow: "none",
+                  backgroundColor: "springgreen",
+                  color: "white",
+                  "&:hover": {
+                    backgroundColor: "aqua",
+                  },
+                }}
+                download
+                href="/anf.pdf"
+              >
+                Certificate
+              </Button>
+            </Grow>
           </Grid>
           <Grid item lg={6} md={12}>
             {about.map((data, index) => (
               <div key={index}>
-                <Typography variant="body1">{data.body}</Typography>
+                <Grow in={true} timeout={{ enter: 1000 }}>
+                  <Typography variant="body1">{data.body}</Typography>
+                </Grow>
                 <br />
               </div>
             ))}
