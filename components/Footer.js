@@ -5,6 +5,7 @@ import Link from "../src/Link";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import FacebookIcon from "@material-ui/icons/Facebook";
+import TelegramIcon from "@material-ui/icons/Telegram";
 import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "3px 3px",
     marginInline: 10,
     "&:hover": {
-      backgroundColor: "#000",
+      backgroundColor: "#777",
       color: "white",
     },
   },
@@ -41,6 +42,15 @@ const useStyles = makeStyles((theme) => ({
     marginInline: 10,
     "&:hover": {
       backgroundColor: "#439FFF",
+      color: "white",
+    },
+  },
+  iconTg: {
+    color: "#eee",
+    padding: "3px 3px",
+    marginInline: 10,
+    "&:hover": {
+      backgroundColor: "#32B1E1",
       color: "white",
     },
   },
@@ -54,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   footer: {
-    width: "82%",
+    width: "60%",
     margin: "0 auto",
     display: "flex",
     justifyContent: "space-between",
@@ -86,6 +96,7 @@ export default function Footer() {
                 className={classes.iconGh}
                 component={Link}
                 href="http://github.com/anfedu"
+                target="_blank"
               >
                 <GitHubIcon />
               </IconButton>
@@ -93,6 +104,7 @@ export default function Footer() {
                 className={classes.iconWa}
                 component={Link}
                 href="https://wasap.at/qcib7h"
+                target="_blank"
               >
                 <WhatsAppIcon />
               </IconButton>
@@ -100,8 +112,17 @@ export default function Footer() {
                 className={classes.iconFb}
                 component={Link}
                 href="https://web.facebook.com/profile.php?id=100009305915205"
+                target="_blank"
               >
                 <FacebookIcon />
+              </IconButton>
+              <IconButton
+                className={classes.iconTg}
+                component={Link}
+                href="https://msng.link/o/?082244956781=tg"
+                target="_blank"
+              >
+                <TelegramIcon />
               </IconButton>
             </>
           }

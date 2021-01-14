@@ -1,10 +1,10 @@
 import React from "react";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import FolderIcon from "@material-ui/icons/Folder";
 import HomeIcon from "@material-ui/icons/Home";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import TelegramIcon from "@material-ui/icons/Telegram";
+import AppsIcon from "@material-ui/icons/Apps";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Link from "../src/Link";
 import { useRouter } from "next/router";
@@ -64,7 +64,7 @@ function MyBottomNavigation(props) {
         label="About"
         value="about"
         classes={classes}
-        icon={<FavoriteIcon />}
+        icon={<AccountCircleIcon />}
         component={Link}
         href="/about"
       />
@@ -72,7 +72,7 @@ function MyBottomNavigation(props) {
         label="Portfolio"
         value="portfolio"
         classes={classes}
-        icon={<LocationOnIcon />}
+        icon={<AppsIcon />}
         component={Link}
         href="/portfolio"
       />
@@ -80,7 +80,7 @@ function MyBottomNavigation(props) {
         label="Contact"
         value="contact"
         classes={classes}
-        icon={<FolderIcon />}
+        icon={<TelegramIcon />}
         component={Link}
         href="/contact"
       />

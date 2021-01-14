@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import Link from "../src/Link";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
-import Brightness3Icon from "@material-ui/icons/Brightness3";
+import NightsStayIcon from "@material-ui/icons/NightsStay";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "none",
   },
   toolbar: {
-    width: "85%",
+    width: "66%",
     margin: "0 auto",
     [theme.breakpoints.down("md")]: {
       margin: "0 0",
@@ -55,6 +55,10 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonLinkActive: {
     color: "#fff",
+    height: 36,
+    boxShadow: "none",
+    borderRadius: 25,
+    border: "2px solid #ccc",
     "&:hover": {
       color: "#eee",
     },
@@ -73,13 +77,13 @@ const useStyles = makeStyles((theme) => ({
   iconDark: {
     color: "#eee",
     cursor: "pointer",
-    transform: "rotate(30deg)",
+    transform: "rotate(250deg)",
     fontSize: 25,
     [theme.breakpoints.down("xs")]: {
       fontSize: 21,
     },
     "&:hover": {
-      color: "#fff",
+      color: "yellow",
     },
   },
 }));
@@ -144,7 +148,7 @@ export default function Navbar({ theme, toggleDarkTheme }) {
                 style={{ padding: "0 0", marginRight: 10 }}
                 onClick={toggleDarkTheme}
               >
-                <Brightness3Icon className={classes.iconDark} />
+                <NightsStayIcon className={classes.iconDark} />
               </IconButton>
             ) : (
               <IconButton

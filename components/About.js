@@ -142,7 +142,7 @@ const useStyles = makeStyles((themes) => ({
   },
   mainContainer: {
     borderRadius: 0,
-    paddingBottom: 100,
+    paddingBottom: 30,
     overflowY: "scroll",
     boxShadow: "none",
     opacity: 0.9,
@@ -161,9 +161,11 @@ const useStyles = makeStyles((themes) => ({
       borderRadius: 30,
     },
     [themes.breakpoints.down("md")]: {
-      maxHeight: "100vh",
-      minHeight: "100vh",
-      marginBottom: 70,
+      maxHeight: "82vh",
+      minHeight: "82vh",
+    },
+    [themes.breakpoints.down("xs")]: {
+      paddingTop: 90,
     },
   },
 }));
@@ -199,14 +201,20 @@ export default function Resume() {
             </Typography>
             <Button
               variant="contained"
-              color="secondary"
               style={{
                 textTransform: "none",
                 width: 130,
                 fontWeight: "bold",
                 borderRadius: 23,
                 boxShadow: "none",
+                backgroundColor: "springgreen",
+                color: "white",
+                "&:hover": {
+                  backgroundColor: "aqua",
+                },
               }}
+              download
+              href="/anf.pdf"
             >
               Certificate
             </Button>
@@ -223,6 +231,7 @@ export default function Resume() {
           </Grid>
         </Grid>
       </Box>
+      <br />
       <Typography variant="h4" align="center" className={classes.heading}>
         Working Experience
       </Typography>
