@@ -114,7 +114,7 @@ export default function Resume() {
     ) {
       setAlert({
         type: "error",
-        body: "Please fill the blank field",
+        body: "Please fill the blanks",
         color: "red",
       });
     } else {
@@ -151,7 +151,7 @@ export default function Resume() {
         className={classes.gridContainer}
       >
         <Grid item lg={4} className={classes.disappeared}>
-          <MessageSkeleton />
+          <MessageSkeleton body={alert.body} color={alert.color} />
         </Grid>
         <Grid item lg={1} className={classes.disappeared}></Grid>
         <Grid item lg={3} md={8} sm={8} xs={11} align="center">
