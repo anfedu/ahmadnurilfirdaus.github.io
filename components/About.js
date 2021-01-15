@@ -140,7 +140,6 @@ const useStyles = makeStyles((themes) => ({
     fontWeight: "bold",
   },
   subHeading: {
-    padding: "0",
     color: "#888",
     fontWeight: "bold",
   },
