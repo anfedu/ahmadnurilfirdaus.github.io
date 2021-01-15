@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  Box,
   Card,
   Typography,
   Grid,
@@ -9,11 +8,10 @@ import {
   TextField,
   InputAdornment,
 } from "@material-ui/core";
-import Link from "../src/Link";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import SendIcon from "@material-ui/icons/Send";
-import Skeleton from "@material-ui/lab/Skeleton";
+import MessageSkeleton from "./MessageSkeleton";
 import CallIcon from "@material-ui/icons/Call";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 import EmailIcon from "@material-ui/icons/Email";
@@ -55,12 +53,36 @@ const useStyles = makeStyles((themes) => ({
       display: "none",
     },
   },
+  disappeared: {
+    [themes.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  title: {
+    [themes.breakpoints.down("xs")]: {
+      fontSize: 18,
+    },
+  },
+  gridContainer: {
+    marginTop: 30,
+    padding: "0 10px",
+  },
+  textfield: {
+    marginTop: 20,
+    [themes.breakpoints.down("xs")]: {
+      marginTop: 13,
+    },
+  },
 }));
 
 export default function Resume() {
   const classes = useStyles();
   const [loading, setLoading] = useState(false);
-  const [alert, setAlert] = useState("");
+  const [alert, setAlert] = useState({
+    type: "success",
+    body: "",
+    color: "springgreen",
+  });
   const [values, setValues] = useState({
     fullName: "",
     email: "",
@@ -74,7 +96,6 @@ export default function Resume() {
   };
 
   const handleSubmit = () => {
-    setLoading(true);
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -84,51 +105,66 @@ export default function Resume() {
       }),
     };
 
-    fetch(
-      "https://api.telegram.org/bot1545229174:AAH5jJeaBIRlD1sSyjqakkmGzVlzy04x8w4/sendMessage",
-      requestOptions
-    )
-      .then((response) => {
-        response.json();
-        if (response) {
-          setLoading(false);
-        }
-      })
-      .then(() => {
-        setValues({
-          fullName: "",
-          email: "",
-          companyName: "",
-          phoneNumber: "",
-          descriptionProject: "",
-        });
-        setAlert("Message sent successfully");
+    if (
+      (values.fullName.trim() === "" &&
+        values.email.trim() === "" &&
+        values.phoneNumber.trim() === "" &&
+        values.companyName.trim() === "",
+      values.descriptionProject.trim() === "")
+    ) {
+      setAlert({
+        type: "error",
+        body: "Please fill the blank field",
+        color: "red",
       });
+    } else {
+      setLoading(true);
+      fetch(
+        "https://api.telegram.org/bot1545229174:AAH5jJeaBIRlD1sSyjqakkmGzVlzy04x8w4/sendMessage",
+        requestOptions
+      )
+        .then((response) => {
+          response.json();
+          if (response) {
+            setLoading(false);
+          }
+        })
+        .then(() => {
+          setValues({
+            fullName: "",
+            email: "",
+            companyName: "",
+            phoneNumber: "",
+            descriptionProject: "",
+          });
+          setAlert({ body: "Message sent successfully", color: "springgreen" });
+        });
+    }
   };
 
   return (
     <Card component="header" className={classes.mainContainer}>
-      <Grid container spacing={1} justify="center" style={{ marginTop: 30 }}>
-        <Grid item lg={3}>
-          <Skeleton
-            variant="circle"
-            animation="wave"
-            style={{ width: 30, height: 30 }}
-          />
-          <Skeleton variant="text" animation="wave" />
+      <Grid
+        container
+        spacing={1}
+        justify="center"
+        className={classes.gridContainer}
+      >
+        <Grid item lg={4} className={classes.disappeared}>
+          <MessageSkeleton />
         </Grid>
-        <Grid item lg={2}></Grid>
-        <Grid item lg={3} align="center">
-          <Typography variant="h6">
+        <Grid item lg={1} className={classes.disappeared}></Grid>
+        <Grid item lg={3} md={8} sm={8} xs={11} align="center">
+          <Typography variant="h6" className={classes.title}>
             Build your awesome project with us
           </Typography>
-          {Object.keys(alert).length > 0 && (
+          {Object.keys(alert.body).length > 0 && (
             <Alert
-              severity="success"
-              style={{ border: "1px solid springgreen", marginTop: 10 }}
-              onClose={() => setAlert("")}
+              severity={alert.type}
+              style={{ border: `1px solid ${alert.color}`, marginTop: 10 }}
+              onClose={() => setAlert({ body: "" })}
             >
-              {alert}
+              {alert.body}
             </Alert>
           )}
           <TextField
@@ -141,7 +177,7 @@ export default function Resume() {
             type="text"
             name="fullName"
             onChange={handleChange}
-            style={{ marginTop: 20 }}
+            className={classes.textfield}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -160,7 +196,7 @@ export default function Resume() {
             type="text"
             name="email"
             onChange={handleChange}
-            style={{ marginTop: 20 }}
+            className={classes.textfield}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -179,7 +215,7 @@ export default function Resume() {
             type="text"
             name="companyName"
             onChange={handleChange}
-            style={{ marginTop: 20 }}
+            className={classes.textfield}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -198,7 +234,7 @@ export default function Resume() {
             type="text"
             name="phoneNumber"
             onChange={handleChange}
-            style={{ marginTop: 20 }}
+            className={classes.textfield}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -220,7 +256,7 @@ export default function Resume() {
             multiline
             rows={3}
             rowsMax={4}
-            style={{ marginTop: 20 }}
+            className={classes.textfield}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
