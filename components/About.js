@@ -226,7 +226,7 @@ export default function Resume() {
             <Grow in={true} timeout={{ enter: 1000 }}>
               <Avatar
                 className={classes.avatar}
-                src="/image/profile.png"
+                src="/image/anf2.png"
                 alt="Ahmad Nuril Firdaus"
               />
             </Grow>
