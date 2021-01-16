@@ -188,7 +188,7 @@ const useStyles = makeStyles((themes) => ({
       minHeight: "100vh",
     },
     [themes.breakpoints.down("xs")]: {
-      paddingTop: 90,
+      paddingTop: 140,
     },
   },
   avatar: {
@@ -304,7 +304,6 @@ export default function Resume() {
       </Box>
       {!matches && (
         <>
-          <br />
           <br />
           <br />
           <br />

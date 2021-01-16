@@ -44,7 +44,7 @@ export default function Layout({ children }) {
     <MuiThemeProvider theme={muiTheme}>
       <div className={darkThemeClass}>
         <Navbar theme={theme} toggleDarkTheme={toggleDarkTheme} />
-        <main>{children}</main>
+        <>{children}</>
         <BottomNavigation />
         <Footer />
       </div>

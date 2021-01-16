@@ -75,19 +75,19 @@ export default function MessageSkeleton({ body, color }) {
       <Skeleton
         className={classes.skeleton}
         style={{
-          width: 375,
+          width: 380,
+          marginTop: -80,
           position: "relative",
-          left: 145,
-          bottom: 85,
+          left: 137,
         }}
       />
       <Skeleton
         className={classes.skeleton}
         style={{
-          width: 205,
+          width: 218,
           position: "relative",
-          left: 290,
-          bottom: 170,
+          left: 273,
+          marginTop: -80,
         }}
       />
     </div>

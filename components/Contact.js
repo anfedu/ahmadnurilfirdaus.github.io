@@ -20,11 +20,11 @@ import Alert from "@material-ui/lab/Alert";
 const useStyles = makeStyles((themes) => ({
   mainContainer: {
     borderRadius: 0,
-    overflowY: "hidden",
+    overflowY: "auto",
     paddingTop: "5vh",
     boxShadow: "none",
     opacity: 0.9,
-    minHeight: "81vh",
+    height: "81vh",
     "&::-webkit-scrollbar": {
       width: "0.4em",
     },
