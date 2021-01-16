@@ -178,7 +178,6 @@ const useStyles = makeStyles((themes) => ({
     },
     [themes.breakpoints.down("md")]: {
       minHeight: "100vh",
-      paddingBottom: 190,
     },
     [themes.breakpoints.down("xs")]: {
       paddingTop: 90,
@@ -284,6 +283,14 @@ export default function Resume() {
           </React.Fragment>
         ))}
       </Box>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </Card>
   );
 }
