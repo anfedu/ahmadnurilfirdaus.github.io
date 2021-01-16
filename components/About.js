@@ -9,8 +9,10 @@ import {
   Button,
   Grow,
   Slide,
+  useMediaQuery,
 } from "@material-ui/core";
 import Link from "../src/Link";
+import { useTheme } from "@material-ui/core/styles";
 import useWindowPosition from "../src/useWindowPosition";
 
 const experience = [
@@ -205,6 +207,9 @@ const useStyles = makeStyles((themes) => ({
 
 export default function Resume() {
   const classes = useStyles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("lg"));
+  console.log(matches, "iki match");
 
   const checked = useWindowPosition("header", 0.3);
 
@@ -283,14 +288,18 @@ export default function Resume() {
           </React.Fragment>
         ))}
       </Box>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      {!matches && (
+        <>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </>
+      )}
     </Card>
   );
 }
