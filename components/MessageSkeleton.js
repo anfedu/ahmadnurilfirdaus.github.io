@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
     height: 60,
     borderRadius: 33,
     marginBottom: 20,
-    animation: `$skeletons 1000ms`,
+    animation: `$skeletons 700ms`,
   },
   icon: {
     width: 100,
