@@ -21,7 +21,7 @@ export default function MyApp(props) {
     <React.Fragment>
       <Head>
         <title>Ahmad Nuril Firdaus</title>
-        <link rel="icon" href="/image/anf2.png" />
+        <link rel="icon" href="/image/anf1.png" />
         <meta
           name="description"
           content="Resume Ahmad Nuril Firdaus Web Developer"
