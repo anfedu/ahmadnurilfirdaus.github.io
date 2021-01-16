@@ -88,7 +88,7 @@ export default function MessageSkeleton({ body, color }) {
           width: 320,
           marginBottom: 20,
           position: "absolute",
-          left: 380,
+          left: 383,
           bottom: 130,
         }}
       />
