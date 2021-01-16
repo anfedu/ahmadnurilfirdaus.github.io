@@ -57,7 +57,7 @@ export default function MessageSkeleton({ body, color }) {
       <Card
         className={classes.cardIcon}
         style={{
-          color: Object.keys(body).length > 0 ? color : "blue",
+          color: Object.keys(body).length > 0 ? color : "#0088cc",
         }}
       >
         <TelegramIcon className={classes.icon} />

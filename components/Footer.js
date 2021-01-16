@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "3px 3px",
     marginInline: 10,
     "&:hover": {
-      backgroundColor: "#439FFF",
+      backgroundColor: "#3b5998",
       color: "white",
     },
   },
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "3px 3px",
     marginInline: 10,
     "&:hover": {
-      backgroundColor: "#32B1E1",
+      backgroundColor: "#0088cc",
       color: "white",
     },
   },
@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "3px 3px",
     marginInline: 10,
     "&:hover": {
-      backgroundColor: "#54F36C",
+      backgroundColor: "#42BD36",
       color: "white",
     },
   },
