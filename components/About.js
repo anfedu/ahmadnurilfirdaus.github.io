@@ -278,7 +278,11 @@ export default function Resume() {
                   className={classes.body2}
                 >
                   {data.body}{" "}
-                  <Link style={{ color: "orange" }} href={data.link}>
+                  <Link
+                    style={{ color: "orange" }}
+                    href={data.link}
+                    target="_blank"
+                  >
                     {data.linkTitle}
                   </Link>
                 </Typography>
