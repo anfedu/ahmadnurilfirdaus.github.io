@@ -178,7 +178,7 @@ const useStyles = makeStyles((themes) => ({
     },
     [themes.breakpoints.down("md")]: {
       minHeight: "100vh",
-      paddingBottom: 130,
+      paddingBottom: 190,
     },
     [themes.breakpoints.down("xs")]: {
       paddingTop: 90,
