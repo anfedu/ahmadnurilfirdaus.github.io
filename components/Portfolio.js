@@ -37,14 +37,14 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   mobile: {
-    [themes.breakpoints.up("md")]: {
+    [themes.breakpoints.up("sm")]: {
       display: "none",
     },
   },
   desktop: {
     width: 500,
     height: 370,
-    [themes.breakpoints.down("sm")]: {
+    [themes.breakpoints.down("xs")]: {
       display: "none",
     },
   },
@@ -75,7 +75,6 @@ export default function Resume() {
             <CardActions>
               <Button
                 variant="contained"
-                color="secondary"
                 fullWidth
                 component={Link}
                 target="_blank"
@@ -85,6 +84,7 @@ export default function Resume() {
                   color: "white",
                   textDecoration: "none",
                   fontWeight: "bold",
+                  backgroundColor: "springgreen",
                 }}
               >
                 Live Preview
@@ -95,13 +95,13 @@ export default function Resume() {
         <Grow in={true} timeout={{ enter: 1500, exit: 1000 }}>
           <Card className={classes.desktop}>
             <Grid container spacing={0}>
-              <Grid item lg={5} md={5}>
+              <Grid item lg={5} md={5} sm={5}>
                 <img
                   src="/image/socialappmobile.png"
                   style={{ width: "100%" }}
                 />
               </Grid>
-              <Grid item lg={7} md={7}>
+              <Grid item lg={7} md={7} sm={7}>
                 <CardContent>
                   <Typography variant="h6" style={{ fontWeight: "bold" }}>
                     SocialApp

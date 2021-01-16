@@ -150,10 +150,16 @@ const useStyles = makeStyles((themes) => ({
     padding: "3rem 0",
     fontWeight: "bold",
     marginTop: 70,
+    [themes.breakpoints.down("xs")]: {
+      fontSize: 27,
+    },
   },
   subHeading: {
     color: "#888",
     fontWeight: "bold",
+    [themes.breakpoints.down("xs")]: {
+      fontSize: 19,
+    },
   },
   body2: {
     textAlign: "justify",
