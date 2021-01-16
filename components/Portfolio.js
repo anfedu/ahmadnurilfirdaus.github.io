@@ -33,8 +33,7 @@ const useStyles = makeStyles((themes) => ({
       borderRadius: 30,
     },
     [themes.breakpoints.down("md")]: {
-      maxHeight: "82vh",
-      minHeight: "82vh",
+      minHeight: "100vh",
     },
   },
   mobile: {

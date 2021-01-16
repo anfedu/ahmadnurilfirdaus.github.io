@@ -177,8 +177,8 @@ const useStyles = makeStyles((themes) => ({
       borderRadius: 30,
     },
     [themes.breakpoints.down("md")]: {
-      maxHeight: "82vh",
-      minHeight: "82vh",
+      minHeight: "100vh",
+      paddingBottom: 130,
     },
     [themes.breakpoints.down("xs")]: {
       paddingTop: 90,
@@ -257,7 +257,7 @@ export default function Resume() {
               {data.year}
             </Typography>
             <Slide
-              in={useWindowPosition("header", (index + 3) / 3.8)}
+              in={useWindowPosition("header", (index + 3) / 4.5)}
               timeout={{ enter: 1300, exit: 1000 }}
               direction="up"
             >

@@ -13,9 +13,6 @@ export default function useWindowPosition(id, number) {
       if (scrollTop < offsetSetHeight * number) {
         setAnimation(false);
       }
-
-      console.log(scrollTop, "scroll");
-      console.log(offsetSetHeight, "offset");
     }
 
     window.document

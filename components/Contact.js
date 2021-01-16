@@ -20,8 +20,8 @@ import Alert from "@material-ui/lab/Alert";
 const useStyles = makeStyles((themes) => ({
   mainContainer: {
     borderRadius: 0,
-    paddingBottom: 30,
     overflowY: "auto",
+    paddingTop: "5vh",
     boxShadow: "none",
     opacity: 0.9,
     minHeight: "81vh",
@@ -38,8 +38,10 @@ const useStyles = makeStyles((themes) => ({
       borderRadius: 30,
     },
     [themes.breakpoints.down("md")]: {
-      maxHeight: "82vh",
-      minHeight: "82vh",
+      minHeight: "100vh",
+    },
+    [themes.breakpoints.down("xs")]: {
+      minHeight: "100vh",
     },
   },
   mobile: {
@@ -64,14 +66,10 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   gridContainer: {
-    marginTop: 30,
     padding: "0 10px",
   },
   textfield: {
     marginTop: 20,
-    [themes.breakpoints.down("xs")]: {
-      marginTop: 13,
-    },
   },
 }));
 
