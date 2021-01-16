@@ -20,12 +20,12 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>Anf</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
+        <title>Ahmad Nuril Firdaus</title>
         <link rel="icon" href="/image/profileCrop.png" />
+        <meta
+          name="description"
+          content="Resume Ahmad Nuril Firdaus Web Developer"
+        />
       </Head>
       <DarkProvider>
         <ThemeProvider theme={theme}>

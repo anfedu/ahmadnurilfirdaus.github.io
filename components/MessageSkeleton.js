@@ -68,38 +68,26 @@ export default function MessageSkeleton({ body, color }) {
       <Skeleton
         className={classes.skeleton}
         style={{
-          width: 190,
+          width: 550,
+        }}
+      />
+      <Skeleton className={classes.skeleton} style={{ width: 547 }} />
+      <Skeleton
+        className={classes.skeleton}
+        style={{
+          width: 375,
+          position: "relative",
+          left: 145,
+          bottom: 85,
         }}
       />
       <Skeleton
         className={classes.skeleton}
         style={{
-          width: 200,
-          position: "absolute",
-          top: 255,
-          left: 500,
-          transform: "rotate(-30deg)",
-        }}
-      />
-      <Skeleton className={classes.skeleton} style={{ width: 500 }} />
-      <Skeleton
-        className={classes.skeleton}
-        style={{
-          width: 320,
-          marginBottom: 20,
-          position: "absolute",
-          left: 383,
-          bottom: 130,
-        }}
-      />
-      <Skeleton
-        className={classes.skeleton}
-        style={{
-          width: 150,
-          marginBottom: 20,
-          position: "absolute",
-          left: 518,
-          bottom: 130,
+          width: 205,
+          position: "relative",
+          left: 290,
+          bottom: 170,
         }}
       />
     </div>

@@ -20,7 +20,7 @@ import Alert from "@material-ui/lab/Alert";
 const useStyles = makeStyles((themes) => ({
   mainContainer: {
     borderRadius: 0,
-    overflowY: "auto",
+    overflowY: "hidden",
     paddingTop: "5vh",
     boxShadow: "none",
     opacity: 0.9,
@@ -265,6 +265,7 @@ export default function Resume() {
           />
           <Button
             variant="contained"
+            aria-label="Center Align"
             color="secondary"
             fullWidth
             onClick={handleSubmit}

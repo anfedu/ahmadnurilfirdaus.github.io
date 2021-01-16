@@ -1,6 +1,6 @@
-import Typed from "../components/Typed";
+import React from "react";
 import Layout from "../components/Layout";
-import { Card } from "@material-ui/core";
+import Typed from "../components/Typed";
 
 export default function Home() {
   return (

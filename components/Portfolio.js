@@ -62,7 +62,7 @@ export default function Resume() {
   return (
     <Card component="header" id="header" className={classes.mainContainer}>
       <Box className={classes.cardContainer}>
-        <Grow in={true} timeout={{ enter: 1500, exit: 1000 }}>
+        <Grow in={true} timeout={{ enter: 1000, exit: 1000 }}>
           <Card className={classes.mobile}>
             <img src="/image/socialapp.png" style={{ width: "100%" }} />
             <CardContent>
@@ -75,6 +75,7 @@ export default function Resume() {
             <CardActions>
               <Button
                 variant="contained"
+                aria-label="Center Align"
                 fullWidth
                 component={Link}
                 target="_blank"
@@ -92,7 +93,7 @@ export default function Resume() {
             </CardActions>
           </Card>
         </Grow>
-        <Grow in={true} timeout={{ enter: 1500, exit: 1000 }}>
+        <Grow in={true} timeout={{ enter: 1000, exit: 1000 }}>
           <Card className={classes.desktop}>
             <Grid container spacing={0}>
               <Grid item lg={5} md={5} sm={5}>

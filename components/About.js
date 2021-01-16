@@ -224,10 +224,15 @@ export default function Resume() {
         <Grid container spacing={3} justify="center">
           <Grid item lg={2} sm={12} align="center">
             <Grow in={true} timeout={{ enter: 1000 }}>
-              <Avatar className={classes.avatar} src="/image/profile.png" />
+              <Avatar
+                className={classes.avatar}
+                src="/image/profile.png"
+                alt="Ahmad Nuril Firdaus"
+              />
             </Grow>
             <Grow in={true} timeout={{ enter: 1000 }}>
               <Button
+                aria-label="Center Align"
                 className={classes.buttonCertificat}
                 variant="contained"
                 download
