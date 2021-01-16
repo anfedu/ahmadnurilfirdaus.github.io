@@ -44,9 +44,16 @@ const useStyles = makeStyles((themes) => ({
   },
   desktop: {
     width: 500,
+    height: 370,
     [themes.breakpoints.down("sm")]: {
       display: "none",
     },
+  },
+  cardContainer: {
+    display: "flex",
+    marginTop: "6%",
+    justifyContent: "center",
+    padding: "0 30px",
   },
 }));
 
@@ -54,16 +61,8 @@ export default function Resume() {
   const classes = useStyles();
 
   return (
-    <Card component="header" className={classes.mainContainer}>
-      <Box
-        style={{
-          height: "74vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "0 30px",
-        }}
-      >
+    <Card component="header" id="header" className={classes.mainContainer}>
+      <Box className={classes.cardContainer}>
         <Grow in={true} timeout={{ enter: 1500, exit: 1000 }}>
           <Card className={classes.mobile}>
             <img src="/image/socialapp.png" style={{ width: "100%" }} />
@@ -105,6 +104,9 @@ export default function Resume() {
               </Grid>
               <Grid item lg={7} md={7}>
                 <CardContent>
+                  <Typography variant="h6" style={{ fontWeight: "bold" }}>
+                    SocialApp
+                  </Typography>
                   <Typography variant="body1" style={{ textAlign: "justify" }}>
                     Social app is web application allows you to create and
                     delete post, you can also like or unlike post and you can

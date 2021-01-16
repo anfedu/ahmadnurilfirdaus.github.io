@@ -1,21 +1,31 @@
 import { useLayoutEffect, useState } from "react";
 
-export default function useWindowPosition(id) {
+export default function useWindowPosition(id, number) {
   const [animation, setAnimation] = useState(false);
 
   useLayoutEffect(() => {
     function updatePosition() {
-      const offetSetHeight = window.document.getElementById(id).offsetHeight;
-      if (window.pageYOffset > offetSetHeight * 0.7) {
+      const offsetSetHeight = window.document.getElementById(id).offsetHeight;
+      const scrollTop = window.document.getElementById(id).scrollTop;
+      if (scrollTop > offsetSetHeight * number) {
         setAnimation(true);
       }
-      // console.log(window.pageYOffset, "iki pageYOffset");
-      // console.log(offetSetHeight, "iki offetSetHeight");
+      if (scrollTop < offsetSetHeight * number) {
+        setAnimation(false);
+      }
+
+      console.log(scrollTop, "scroll");
+      console.log(offsetSetHeight, "offset");
     }
 
-    window.addEventListener("scroll", updatePosition);
+    window.document
+      .getElementById(id)
+      .addEventListener("scroll", updatePosition);
     updatePosition();
-    return () => window.removeEventListener("scroll", updatePosition);
+    return () =>
+      window.document
+        .getElementById(id)
+        .removeEventListener("scroll", updatePosition);
   }, [id]);
   return animation;
 }

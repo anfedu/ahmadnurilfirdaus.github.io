@@ -8,8 +8,10 @@ import {
   Grid,
   Button,
   Grow,
+  Slide,
 } from "@material-ui/core";
 import Link from "../src/Link";
+import useWindowPosition from "../src/useWindowPosition";
 
 const experience = [
   {
@@ -74,6 +76,13 @@ const useStyles = makeStyles((themes) => ({
         right: "auto",
       },
     },
+  },
+  boxContainer: {
+    height: "80vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "0 30px",
   },
 
   timeLineItem: {
@@ -150,7 +159,7 @@ const useStyles = makeStyles((themes) => ({
   },
   mainContainer: {
     borderRadius: 0,
-    paddingBottom: 30,
+    paddingBottom: 20,
     overflowY: "auto",
     boxShadow: "none",
     opacity: 0.9,
@@ -175,45 +184,43 @@ const useStyles = makeStyles((themes) => ({
       paddingTop: 90,
     },
   },
+  avatar: {
+    width: 190,
+    height: 190,
+    marginBottom: 10,
+  },
+  buttonCertificat: {
+    textTransform: "none",
+    width: 130,
+    fontWeight: "bold",
+    borderRadius: 23,
+    boxShadow: "none",
+    backgroundColor: "springgreen",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "aquamarine",
+      boxShadow: "none",
+    },
+  },
 }));
 
 export default function Resume() {
   const classes = useStyles();
 
+  const checked = useWindowPosition("header", 0.3);
+
   return (
-    <Card component="header" className={classes.mainContainer}>
-      <Box
-        style={{
-          height: "80vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "0 30px",
-        }}
-      >
+    <Card component="header" id="header" className={classes.mainContainer}>
+      <Box className={classes.boxContainer}>
         <Grid container spacing={3} justify="center">
           <Grid item lg={2} sm={12} align="center">
-            <Grow in={true} timeout={{ enter: 1100 }}>
-              <Avatar
-                style={{ width: 190, height: 190, marginBottom: 10 }}
-                src="/image/profile.png"
-              />
+            <Grow in={true} timeout={{ enter: 1000 }}>
+              <Avatar className={classes.avatar} src="/image/profile.png" />
             </Grow>
             <Grow in={true} timeout={{ enter: 1000 }}>
               <Button
+                className={classes.buttonCertificat}
                 variant="contained"
-                style={{
-                  textTransform: "none",
-                  width: 130,
-                  fontWeight: "bold",
-                  borderRadius: 23,
-                  boxShadow: "none",
-                  backgroundColor: "springgreen",
-                  color: "white",
-                  "&:hover": {
-                    backgroundColor: "aqua",
-                  },
-                }}
                 download
                 href="/anf.pdf"
               >
@@ -234,9 +241,11 @@ export default function Resume() {
         </Grid>
       </Box>
       <br />
-      <Typography variant="h4" align="center" className={classes.heading}>
-        Working Experience
-      </Typography>
+      <Grow in={checked} timeout={{ enter: 1300, exit: 1000 }}>
+        <Typography variant="h4" align="center" className={classes.heading}>
+          Working Experience
+        </Typography>
+      </Grow>
       <Box component="div" className={classes.timeLine}>
         {experience.map((data, index) => (
           <React.Fragment key={index}>
@@ -247,25 +256,31 @@ export default function Resume() {
             >
               {data.year}
             </Typography>
-            <Box component="div" className={classes.timeLineItem}>
-              <Typography
-                variant="h5"
-                aligh="center"
-                className={classes.subHeading}
-              >
-                {data.title}
-              </Typography>
-              <Typography
-                aligh="center"
-                variant="body2"
-                className={classes.body2}
-              >
-                {data.body}{" "}
-                <Link style={{ color: "orange" }} href={data.link}>
-                  {data.linkTitle}
-                </Link>
-              </Typography>
-            </Box>
+            <Slide
+              in={useWindowPosition("header", (index + 3) / 3.8)}
+              timeout={{ enter: 1300, exit: 1000 }}
+              direction="up"
+            >
+              <Box component="div" className={classes.timeLineItem}>
+                <Typography
+                  variant="h5"
+                  aligh="center"
+                  className={classes.subHeading}
+                >
+                  {data.title}
+                </Typography>
+                <Typography
+                  aligh="center"
+                  variant="body2"
+                  className={classes.body2}
+                >
+                  {data.body}{" "}
+                  <Link style={{ color: "orange" }} href={data.link}>
+                    {data.linkTitle}
+                  </Link>
+                </Typography>
+              </Box>
+            </Slide>
           </React.Fragment>
         ))}
       </Box>
