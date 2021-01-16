@@ -209,7 +209,6 @@ export default function Resume() {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("lg"));
-  console.log(matches, "iki match");
 
   const checked = useWindowPosition("header", 0.3);
 
