@@ -86,7 +86,6 @@ const useStyles = makeStyles((themes) => ({
     alignItems: "center",
     padding: "0 30px",
   },
-
   timeLineItem: {
     padding: "1rem",
     borderBottom: "2px solid aquamarine",
@@ -162,7 +161,6 @@ const useStyles = makeStyles((themes) => ({
     },
   },
   body2: {
-    textAlign: "justify",
     lineHeight: 1.3,
   },
   mainContainer: {
@@ -188,7 +186,7 @@ const useStyles = makeStyles((themes) => ({
       minHeight: "100vh",
     },
     [themes.breakpoints.down("xs")]: {
-      paddingTop: 140,
+      paddingTop: "30%",
     },
   },
   avatar: {
@@ -278,13 +276,13 @@ export default function Resume() {
               <Box component="div" className={classes.timeLineItem}>
                 <Typography
                   variant="h5"
-                  aligh="center"
+                  align="justify"
                   className={classes.subHeading}
                 >
                   {data.title}
                 </Typography>
                 <Typography
-                  aligh="center"
+                  align="justify"
                   variant="body2"
                   className={classes.body2}
                 >
@@ -304,6 +302,7 @@ export default function Resume() {
       </Box>
       {!matches && (
         <>
+          <br />
           <br />
           <br />
           <br />

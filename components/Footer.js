@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Chip, Typography, IconButton } from "@material-ui/core";
+import { Chip, Typography, IconButton, Box } from "@material-ui/core";
 import Link from "../src/Link";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
@@ -13,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     margin: "0 auto",
     height: "10vh",
+    position: "fixed",
+    bottom: 0,
     fontSize: 15,
     display: "flex",
     alignItems: "center",
@@ -64,7 +66,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   footer: {
-    width: "60%",
+    width: "62%",
+    color: "#eee",
     margin: "0 auto",
     display: "flex",
     justifyContent: "space-between",
@@ -74,17 +77,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
   const classes = useStyles();
-  const router = useRouter();
   return (
-    <div
-      className={classes.root}
-      style={{
-        position: "fixed",
-        bottom: 0,
-      }}
-    >
+    <div className={classes.root}>
       <footer className={classes.footer}>
-        <Typography variant="body1" style={{ color: "#eee" }}>
+        <Typography variant="body1">
           Created by <b> Ahmad Nuril Firdaus</b>
         </Typography>
         <Chip

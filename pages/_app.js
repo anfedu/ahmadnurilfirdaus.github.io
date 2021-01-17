@@ -25,6 +25,7 @@ export default function MyApp(props) {
           name="description"
           content="Resume Ahmad Nuril Firdaus Web Developer"
         />
+        <link rel="icon" href="image/anf1.png" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
