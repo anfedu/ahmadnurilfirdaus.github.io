@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { CssBaseline, NoSsr } from "@material-ui/core/";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/theme";
 import { DarkProvider } from "../context/DarkMode";
 
@@ -21,20 +21,21 @@ export default function MyApp(props) {
     <React.Fragment>
       <Head>
         <title>Ahmad Nuril Firdaus</title>
-        <link rel="icon" href="/image/anf1.png" />
         <meta
           name="description"
           content="Resume Ahmad Nuril Firdaus Web Developer"
         />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
       </Head>
-      <DarkProvider>
-        <ThemeProvider theme={theme}>
-          <NoSsr>
-            <CssBaseline />
-            <Component {...pageProps} />
-          </NoSsr>
-        </ThemeProvider>
-      </DarkProvider>
+      <ThemeProvider theme={theme}>
+        <DarkProvider>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </DarkProvider>
+      </ThemeProvider>
     </React.Fragment>
   );
 }
