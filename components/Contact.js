@@ -7,7 +7,9 @@ import {
   Button,
   TextField,
   InputAdornment,
+  useMediaQuery,
 } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import SendIcon from "@material-ui/icons/Send";
@@ -88,6 +90,9 @@ export default function Resume() {
     phoneNumber: "",
     descriptionProject: "",
   });
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -286,6 +291,17 @@ export default function Resume() {
           </Button>
         </Grid>
       </Grid>
+      {matches && (
+        <>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </>
+      )}
     </Card>
   );
 }
