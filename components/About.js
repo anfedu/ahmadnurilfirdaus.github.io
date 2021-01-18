@@ -186,7 +186,7 @@ const useStyles = makeStyles((themes) => ({
       minHeight: "100vh",
     },
     [themes.breakpoints.down("xs")]: {
-      paddingTop: "30%",
+      paddingTop: "35%",
     },
   },
   avatar: {

@@ -1,9 +1,12 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState, useEffect } from "react";
 
 export default function useWindowPosition(id, number) {
   const [animation, setAnimation] = useState(false);
 
-  useLayoutEffect(() => {
+  const useIsomorphicLayoutEffect =
+    typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+  useIsomorphicLayoutEffect(() => {
     function updatePosition() {
       const offsetSetHeight = window.document.getElementById(id).offsetHeight;
       const scrollTop = window.document.getElementById(id).scrollTop;
