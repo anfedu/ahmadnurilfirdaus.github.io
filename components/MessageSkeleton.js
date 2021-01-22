@@ -68,10 +68,10 @@ export default function MessageSkeleton({ body, color }) {
       <Skeleton
         className={classes.skeleton}
         style={{
-          width: 550,
+          width: 533,
         }}
       />
-      <Skeleton className={classes.skeleton} style={{ width: 547 }} />
+      <Skeleton className={classes.skeleton} style={{ width: 537 }} />
       <Skeleton
         className={classes.skeleton}
         style={{
