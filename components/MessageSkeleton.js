@@ -62,8 +62,7 @@ export default function MessageSkeleton({ body, color }) {
       >
         <TelegramIcon className={classes.icon} />
       </Card>
-      <Skeleton className={classes.skeleton} style={{ width: 90 }} />
-      <Skeleton className={classes.skeleton} style={{ width: 250 }} />
+      <Skeleton className={classes.skeleton} style={{ width: 245 }} />
       <Skeleton className={classes.skeleton} style={{ width: 400 }} />
       <Skeleton
         className={classes.skeleton}
