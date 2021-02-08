@@ -2,16 +2,16 @@ import React from "react";
 import { createContext } from "react";
 
 const DarkContext = createContext({
-  palette: { type: "dark" },
+  palette: { type: "light" },
 });
 
 const DarkProvider = (props) => {
-  const [check, setCheck] = React.useState({ palette: { type: "dark" } });
+  const [check, setCheck] = React.useState({ palette: { type: "light" } });
   const toggleDarkTheme = () => {
-    if (check.palette.type === "dark") {
-      setCheck({ palette: { type: "light" } });
-    } else if (check.palette.type === "light") {
+    if (check.palette.type === "light") {
       setCheck({ palette: { type: "dark" } });
+    } else if (check.palette.type === "dark") {
+      setCheck({ palette: { type: "light" } });
     }
   };
 

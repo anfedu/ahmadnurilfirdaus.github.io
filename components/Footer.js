@@ -1,12 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Chip, Typography, IconButton, Box } from "@material-ui/core";
+import { Chip, Typography, IconButton } from "@material-ui/core";
 import Link from "../src/Link";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TelegramIcon from "@material-ui/icons/Telegram";
-import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   footer: {
-    width: "62%",
+    width: "60%",
     color: "#eee",
     margin: "0 auto",
     display: "flex",
