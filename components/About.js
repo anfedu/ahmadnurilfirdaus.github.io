@@ -269,7 +269,7 @@ export default function Resume() {
               {data.year}
             </Typography>
             <Slide
-              in={useWindowPosition("header", (index + 3) / 4.5)}
+              in={useWindowPosition("header", (index + 3) / 4.2)}
               timeout={{ enter: 1300, exit: 1000 }}
               direction="up"
             >

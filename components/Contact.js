@@ -159,7 +159,7 @@ export default function Resume() {
         <Grid item lg={1} className={classes.disappeared}></Grid>
         <Grid item lg={3} md={8} sm={8} xs={11} align="center">
           <Typography variant="h6" className={classes.title}>
-            Build your awesome project with us
+            Hire me{" "}
           </Typography>
           {Object.keys(alert.body).length > 0 && (
             <Alert

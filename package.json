@@ -2,7 +2,7 @@
   "name": "ahmad-nuril-firdaus.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ahmad-nuril-firdaus.github.io",
+  "homepage": "https://ahmadnurilfirdaus.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
