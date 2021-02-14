@@ -66,13 +66,12 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     width: 500,
-    height: 330,
+    minHeight: 330,
     [theme.breakpoints.down("sm")]: {
       marginTop: theme.spacing(3),
     },
     [theme.breakpoints.down("xs")]: {
       width: 350,
-      height: 400,
     },
   },
   image: {
