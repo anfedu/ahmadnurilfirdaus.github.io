@@ -6,7 +6,7 @@ export const projectData = [
     Link: "https://dewetour.vercel.app/",
     title: "Dewe Tour",
     description:
-      "Find beautiful place with dewe tour, Dewe Tour is an application to find beautiful places, just a touch of your finger'. this app build with node js, postgres, express, next js",
+      "Find beautiful place with dewe tour, Dewe Tour is an application to find beautiful places, just a touch of your finger. this app build using node js, postgres, express, next js",
   },
   {
     id: 2,
