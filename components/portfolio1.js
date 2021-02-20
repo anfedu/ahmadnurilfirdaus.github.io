@@ -138,11 +138,10 @@ export default function Resume() {
                       href={item.Link}
                       style={{
                         textTransform: "none",
-                        color: "white",
                         textDecoration: "none",
                         fontWeight: "bold",
-                        backgroundColor: "springgreen",
                       }}
+                      color="secondary"
                     >
                       Live Preview
                     </Button>

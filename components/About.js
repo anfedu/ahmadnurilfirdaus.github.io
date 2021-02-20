@@ -194,18 +194,12 @@ const useStyles = makeStyles((themes) => ({
     height: 190,
     marginBottom: 10,
   },
-  buttonCertificat: {
+  buttonCv: {
     textTransform: "none",
     width: 130,
     fontWeight: "bold",
     borderRadius: 23,
     boxShadow: "none",
-    backgroundColor: "springgreen",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "aquamarine",
-      boxShadow: "none",
-    },
   },
 }));
 
@@ -224,19 +218,20 @@ export default function Resume() {
             <Grow in={true} timeout={{ enter: 1000 }}>
               <Avatar
                 className={classes.avatar}
-                src="/image/profile.png"
+                src="/image/profile.jpg"
                 alt="Ahmad Nuril Firdaus"
               />
             </Grow>
             <Grow in={true} timeout={{ enter: 1000 }}>
               <Button
                 aria-label="Center Align"
-                className={classes.buttonCertificat}
+                className={classes.buttonCv}
                 variant="contained"
                 download
-                href="/anf.pdf"
+                href="/cv.pdf"
+                color="secondary"
               >
-                Certificate
+                Download CV
               </Button>
             </Grow>
           </Grid>
