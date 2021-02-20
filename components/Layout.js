@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     width: "100vw",
     height: "100vh",
     background:
-      "linear-gradient(60deg, rgba(52, 55, 100, 0.7), rgba(92, 155, 248, 0.7)), url('/image/Background.jpg') no-repeat center center fixed",
+      "linear-gradient(60deg, rgba(52, 55, 100, 0.7), rgba(53, 103, 135, 0.7)), url('/image/Background.jpg') no-repeat center center fixed",
     backgroundSize: "cover",
     overflowX: "hidden",
     overflowY: "hidden",
