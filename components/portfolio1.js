@@ -21,27 +21,24 @@ import { projectData } from "./projectData";
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
     height: "80vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
     marginTop: 0,
-    marginBottom: 0,
+    marginBottom: 200,
+    [theme.breakpoints.up("lg")]: {
+      padding: "0 10.5%",
+    },
     [theme.breakpoints.down("sm")]: {
-      marginTop: theme.spacing(7),
-      marginBottom: theme.spacing(10),
+      marginBottom: 570,
     },
     [theme.breakpoints.down("xs")]: {
-      marginTop: theme.spacing(5.7),
-      marginBottom: theme.spacing(19),
+      marginBottom: 330,
     },
   },
   mainContainer: {
     borderRadius: 0,
-    // paddingBottom: "20vh",
     overflowY: "auto",
     boxShadow: "none",
     opacity: 0.9,
-    maxHeight: "80vh",
+    maxHeight: "81vh",
     "&::-webkit-scrollbar": {
       width: "0.4em",
     },
@@ -54,14 +51,17 @@ const useStyles = makeStyles((theme) => ({
       outline: "none",
       borderRadius: 30,
     },
+    paddingTop: "2%",
     [theme.breakpoints.down("md")]: {
       minHeight: "100vh",
     },
     [theme.breakpoints.down("sm")]: {
-      paddingTop: "10vh",
+      minHeight: "100vh",
+      paddingTop: "2%",
+      paddingBottom: "15%",
     },
     [theme.breakpoints.down("xs")]: {
-      paddingTop: "35%",
+      paddingTop: "5%",
     },
   },
   card: {
@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       width: 350,
+      minHeight: 230,
     },
   },
   image: {
@@ -79,10 +80,10 @@ const useStyles = makeStyles((theme) => ({
     height: 330,
     [theme.breakpoints.down("xs")]: { display: "none" },
   },
-  imageWeb: {
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
+  cardWrapper: {
+    marginTop: 30,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 20,
     },
   },
 }));
@@ -96,59 +97,62 @@ export default function Resume() {
 
   return (
     <Card component="header" id="header" className={classes.mainContainer}>
-      <Box className={classes.boxContainer}>
-        <Grid container spacing={3} justify="center">
-          {projectData.map((item, index) => (
-            <Grid item xs={12} sm={12} lg={5} md={6} key={index} align="center">
-              <Card className={classes.card}>
-                <Grid container spacing={0}>
-                  <Grid item lg={5} md={5} sm={5} xl={12}>
-                    <img
-                      src={`/image/${item.web}`}
-                      className={classes.imageWeb}
-                    />
-                    <img
-                      src={`/image/${item.mobile}`}
-                      className={classes.image}
-                    />
-                  </Grid>
-                  <Grid item lg={7} md={7} sm={7} xl={12}>
-                    <CardContent>
-                      <Typography variant="h6" style={{ fontWeight: "bold" }}>
-                        {item.title}
-                      </Typography>
-                      <Typography
-                        variant="body1"
-                        style={{ textAlign: "justify" }}
-                      >
-                        {item.description}
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button
-                        variant="contained"
-                        fullWidth
-                        component={Link}
-                        target="_blank"
-                        href={item.Link}
-                        style={{
-                          textTransform: "none",
-                          color: "white",
-                          textDecoration: "none",
-                          fontWeight: "bold",
-                          backgroundColor: "springgreen",
-                        }}
-                      >
-                        Live Preview
-                      </Button>
-                    </CardActions>
-                  </Grid>
+      <Grid container spacing={0} className={classes.boxContainer}>
+        {projectData.map((item, index) => (
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={6}
+            lg={6}
+            key={index}
+            align="center"
+            className={classes.cardWrapper}
+          >
+            <Card className={classes.card}>
+              <Grid container spacing={0}>
+                <Grid item lg={5} md={5} sm={5} xl={12}>
+                  <img
+                    src={`/image/${item.mobile}`}
+                    className={classes.image}
+                  />
                 </Grid>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+                <Grid item lg={7} md={7} sm={7} xl={12}>
+                  <CardContent>
+                    <Typography variant="h6" style={{ fontWeight: "bold" }}>
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{ textAlign: "justify" }}
+                    >
+                      {item.description}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      variant="contained"
+                      fullWidth
+                      component={Link}
+                      target="_blank"
+                      href={item.Link}
+                      style={{
+                        textTransform: "none",
+                        color: "white",
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        backgroundColor: "springgreen",
+                      }}
+                    >
+                      Live Preview
+                    </Button>
+                  </CardActions>
+                </Grid>
+              </Grid>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
       <br />
       {!matches && (
         <>
