@@ -17,7 +17,7 @@ import useWindowPosition from "../src/useWindowPosition";
 
 const experience = [
   {
-    year: "2019",
+    year: "2018",
     title: "Physics Teacher",
     body:
       "Unacademy is an Indian online education technology company based in Bangalore. It was originally created as a YouTube channel in 2010 by Gaurav Munjal (wikipedia), My experience is as physics teacher in",
