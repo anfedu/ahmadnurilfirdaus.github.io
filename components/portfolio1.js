@@ -2,13 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
-  Box,
   Card,
-  Avatar,
   Grid,
   Button,
-  Grow,
-  Slide,
   CardActions,
   CardContent,
   useMediaQuery,
@@ -22,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   boxContainer: {
     height: "80vh",
     marginTop: 0,
-    marginBottom: 200,
+    marginBottom: 250,
     [theme.breakpoints.up("lg")]: {
       padding: "0 10.5%",
     },
@@ -35,10 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     borderRadius: 0,
-    overflowY: "auto",
     boxShadow: "none",
     opacity: 0.9,
-    maxHeight: "81vh",
+    maxHeight: "85vh",
     "&::-webkit-scrollbar": {
       width: "0.4em",
     },
@@ -47,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
       webkitBoxShadow: "none",
     },
     "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "#bbb",
+      backgroundColor: "blue",
       outline: "none",
       borderRadius: 30,
     },
@@ -62,6 +57,16 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       paddingTop: "5%",
+    },
+    overflowY: "auto",
+    animation: `$mode 500ms`,
+  },
+  "@keyframes mode": {
+    "0%": {
+      opacity: 0.5,
+    },
+    "100%": {
+      opacity: 0.9,
     },
   },
   card: {

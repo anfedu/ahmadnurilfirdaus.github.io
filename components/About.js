@@ -166,10 +166,11 @@ const useStyles = makeStyles((themes) => ({
   mainContainer: {
     borderRadius: 0,
     paddingBottom: 20,
-    overflowY: "auto",
+    // overflowY: "auto",
+    animation: `$mode 500ms`,
+    maxHeight: "85vh",
     boxShadow: "none",
     opacity: 0.9,
-    maxHeight: "81vh",
     "&::-webkit-scrollbar": {
       width: "0.4em",
     },
@@ -187,6 +188,7 @@ const useStyles = makeStyles((themes) => ({
     },
     [themes.breakpoints.down("xs")]: {
       paddingTop: "35%",
+      overflowY: "auto",
     },
   },
   avatar: {
@@ -200,6 +202,14 @@ const useStyles = makeStyles((themes) => ({
     fontWeight: "bold",
     borderRadius: 23,
     boxShadow: "none",
+  },
+  "@keyframes mode": {
+    "0%": {
+      opacity: 0.5,
+    },
+    "100%": {
+      opacity: 0.9,
+    },
   },
 }));
 

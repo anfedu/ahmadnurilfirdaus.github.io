@@ -26,7 +26,7 @@ const useStyles = makeStyles((themes) => ({
     paddingTop: "5vh",
     boxShadow: "none",
     opacity: 0.9,
-    height: "81vh",
+    height: "85vh",
     "&::-webkit-scrollbar": {
       width: "0.4em",
     },
@@ -44,6 +44,15 @@ const useStyles = makeStyles((themes) => ({
     },
     [themes.breakpoints.down("xs")]: {
       minHeight: "100vh",
+    },
+    animation: `$mode 500ms`,
+  },
+  "@keyframes mode": {
+    "0%": {
+      opacity: 0.5,
+    },
+    "100%": {
+      opacity: 0.9,
     },
   },
   mobile: {

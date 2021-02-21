@@ -11,25 +11,27 @@ import {
 import Link from "../src/Link";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
 import Brightness2Icon from "@material-ui/icons/Brightness2";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
     position: "relative",
     top: 0,
     width: "100%",
-    background: "none",
     boxShadow: "none",
   },
   toolbar: {
     width: "66%",
     margin: "0 auto",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
     [theme.breakpoints.down("sm")]: {
       margin: "0 0",
       width: "100%",
     },
   },
   title: {
-    flexGrow: 1,
     fontSize: 21,
     textDecoration: "none",
     color: "#eee",
@@ -88,9 +90,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar({ theme, toggleDarkTheme }) {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
-    <AppBar position="static" className={classes.appbar}>
+    <AppBar
+      position="static"
+      className={classes.appbar}
+      color={router.pathname === "/" ? "transparent" : "primary"}
+    >
       <Toolbar className={classes.toolbar}>
         <Typography
           component={Link}
