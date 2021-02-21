@@ -45,15 +45,6 @@ const useStyles = makeStyles((themes) => ({
     [themes.breakpoints.down("xs")]: {
       minHeight: "100vh",
     },
-    animation: `$mode 500ms`,
-  },
-  "@keyframes mode": {
-    "0%": {
-      opacity: 0.5,
-    },
-    "100%": {
-      opacity: 0.9,
-    },
   },
   mobile: {
     [themes.breakpoints.up("lg")]: {

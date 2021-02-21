@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: "springgreen",
     },
+    animation: `$mode 500ms`,
   },
   iconDark: {
     color: "#eee",
@@ -83,7 +84,15 @@ const useStyles = makeStyles((theme) => ({
     },
     "&:hover": {
       color: "yellow",
-      // boxShadow: "0 0 2px 1px #fff, 0 0 10px 2px #f0f, 0 0 15px 3px #0ff",
+    },
+    animation: `$mode 500ms`,
+  },
+  "@keyframes mode": {
+    "0%": {
+      opacity: 0,
+    },
+    "100%": {
+      opacity: 1,
     },
   },
 }));
