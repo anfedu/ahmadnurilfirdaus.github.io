@@ -70,7 +70,6 @@ function MyBottomNavigation(props) {
       className={darkThemeClass}
     >
       <BottomNavigationAction
-        label="Home"
         value=""
         classes={classes}
         icon={<HomeIcon />}
@@ -78,7 +77,6 @@ function MyBottomNavigation(props) {
         href="/"
       />
       <BottomNavigationAction
-        label="About"
         value="about"
         classes={classes}
         icon={<AccountCircleIcon />}
@@ -86,7 +84,6 @@ function MyBottomNavigation(props) {
         href="/about"
       />
       <BottomNavigationAction
-        label="Portfolio"
         value="portfolio"
         classes={classes}
         icon={<AppsIcon />}
@@ -94,7 +91,6 @@ function MyBottomNavigation(props) {
         href="/portfolio"
       />
       <BottomNavigationAction
-        label="Contact"
         value="contact"
         classes={classes}
         icon={<TelegramIcon />}
