@@ -13,7 +13,7 @@ export const projectData = [
     Link: "https://thejourney.vercel.app/",
     title: "The Journey",
     description:
-      "We made a tool so you can easily keep & share your travel memories. But there is a lot more, just from your hand. this app build using node js, postgres, express, next js",
+      "We made a tool so you can easily keep & share your travel memories. But there is a lot more. this app build using node js, postgres, express, next js",
   },
   {
     id: 3,
