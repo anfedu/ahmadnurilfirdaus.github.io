@@ -36,8 +36,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#eee",
     padding: "3px 3px",
     marginInline: 10,
+    backgroundColor: "#777",
     "&:hover": {
-      backgroundColor: "#777",
+      backgroundColor: "#666",
       color: "white",
     },
   },
@@ -45,8 +46,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#eee",
     padding: "3px 3px",
     marginInline: 10,
+    backgroundColor: "#3b5998",
     "&:hover": {
-      backgroundColor: "#3b5998",
+      backgroundColor: "#3b4880",
       color: "white",
     },
   },
@@ -54,8 +56,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#eee",
     padding: "3px 3px",
     marginInline: 10,
+    backgroundColor: "#0088cc",
     "&:hover": {
-      backgroundColor: "#0088cc",
+      backgroundColor: "#0077aa",
       color: "white",
     },
   },
@@ -63,8 +66,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#eee",
     padding: "3px 3px",
     marginInline: 10,
+    backgroundColor: "#42BD36",
     "&:hover": {
-      backgroundColor: "#42BD36",
+      backgroundColor: "#42BD7a",
       color: "white",
     },
   },
