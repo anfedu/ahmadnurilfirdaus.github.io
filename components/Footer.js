@@ -14,6 +14,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { useRouter } from "next/router";
+import { DarkContext } from "../context/DarkMode";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -97,6 +98,9 @@ const useStyles = makeStyles((theme) => ({
 export default function Footer() {
   const classes = useStyles();
   const router = useRouter();
+  const context = React.useContext(DarkContext);
+  const { theme } = context;
+  const palette = theme.palette.type;
   const iconArray = [
     {
       id: 1,
@@ -133,7 +137,13 @@ export default function Footer() {
     <AppBar
       className={classes.root}
       position="fixed"
-      color={router.pathname === "/" ? "transparent" : "primary"}
+      color={
+        router.pathname === "/"
+          ? "transparent"
+          : palette === "light"
+          ? "primary"
+          : "default"
+      }
     >
       <Toolbar className={classes.footer}>
         <Typography variant="body1">

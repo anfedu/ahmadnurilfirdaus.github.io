@@ -100,12 +100,19 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar({ theme, toggleDarkTheme }) {
   const classes = useStyles();
   const router = useRouter();
+  console.log(theme.palette.type, "iki theme");
 
   return (
     <AppBar
       position="static"
       className={classes.appbar}
-      color={router.pathname === "/" ? "transparent" : "primary"}
+      color={
+        router.pathname === "/"
+          ? "transparent"
+          : theme.palette.type === "light"
+          ? "primary"
+          : "default"
+      }
     >
       <Toolbar className={classes.toolbar}>
         <Typography
