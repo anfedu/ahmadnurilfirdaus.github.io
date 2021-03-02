@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     margin: "0 auto",
+    boxShadow: "none",
     top: "auto",
     bottom: 0,
     fontSize: 15,
