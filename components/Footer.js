@@ -12,6 +12,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TelegramIcon from "@material-ui/icons/Telegram";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
@@ -72,6 +73,16 @@ const useStyles = makeStyles((theme) => ({
       color: "white",
     },
   },
+  iconLinkedIn: {
+    color: "#eee",
+    padding: "3px 3px",
+    marginInline: 10,
+    backgroundColor: "#2867b2",
+    "&:hover": {
+      backgroundColor: "#2756b0",
+      color: "white",
+    },
+  },
   footer: {
     width: "66%",
     color: "#eee",
@@ -85,6 +96,38 @@ const useStyles = makeStyles((theme) => ({
 export default function Footer() {
   const classes = useStyles();
   const router = useRouter();
+  const iconArray = [
+    {
+      id: 1,
+      class: classes.iconGh,
+      icon: GitHubIcon,
+      link: "http://github.com/anfedu",
+    },
+    {
+      id: 2,
+      class: classes.iconWa,
+      icon: WhatsAppIcon,
+      link: "https://wasap.at/qcib7h",
+    },
+    {
+      id: 3,
+      class: classes.iconFb,
+      icon: FacebookIcon,
+      link: "https://web.facebook.com/profile.php?id=100009305915205",
+    },
+    {
+      id: 4,
+      class: classes.iconTg,
+      icon: TelegramIcon,
+      link: "https://t.me/ahmadnurilfirdaus",
+    },
+    {
+      id: 5,
+      class: classes.iconLinkedIn,
+      icon: LinkedInIcon,
+      link: "https://www.linkedin.com/in/ahmad-nuril-firdaus/",
+    },
+  ];
   return (
     <AppBar
       className={classes.root}
@@ -100,38 +143,16 @@ export default function Footer() {
           variant="outlined"
           label={
             <>
-              <IconButton
-                className={classes.iconGh}
-                component={Link}
-                href="http://github.com/anfedu"
-                target="_blank"
-              >
-                <GitHubIcon />
-              </IconButton>
-              <IconButton
-                className={classes.iconWa}
-                component={Link}
-                href="https://wasap.at/qcib7h"
-                target="_blank"
-              >
-                <WhatsAppIcon />
-              </IconButton>
-              <IconButton
-                className={classes.iconFb}
-                component={Link}
-                href="https://web.facebook.com/profile.php?id=100009305915205"
-                target="_blank"
-              >
-                <FacebookIcon />
-              </IconButton>
-              <IconButton
-                className={classes.iconTg}
-                component={Link}
-                href="https://t.me/ahmadnurilfirdaus"
-                target="_blank"
-              >
-                <TelegramIcon />
-              </IconButton>
+              {iconArray.map((item) => (
+                <IconButton
+                  className={item.class}
+                  component={Link}
+                  href={`${item.link}`}
+                  target="_blank"
+                >
+                  <item.icon />
+                </IconButton>
+              ))}
             </>
           }
         />
