@@ -1,3 +1,3 @@
-### ahmad-nuril-firdaus.github.io
+### ahmadnurilfirdaus.github.io
 
 Welcome to my digital site
