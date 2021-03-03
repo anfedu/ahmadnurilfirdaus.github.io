@@ -2,6 +2,7 @@ export const projectData = [
   {
     id: 1,
     mobile: "dewetourmobile.jpg",
+    web: "dewetourweb.png",
     Link: "https://dewetour.vercel.app/",
     title: "Dewe Tour",
     description:
@@ -10,6 +11,7 @@ export const projectData = [
   {
     id: 2,
     mobile: "thejourney.jpg",
+    web: "thejourneyweb.png",
     Link: "https://thejourney.vercel.app/",
     title: "The Journey",
     description:
@@ -18,6 +20,7 @@ export const projectData = [
   {
     id: 3,
     mobile: "socialappmobile.png",
+    web: "socialappweb.png",
     title: "Social App",
     Link: "http://anf-socialapp.netlify.app",
     description:

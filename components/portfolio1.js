@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: 570,
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom: 330,
+      marginBottom: theme.spacing(80),
     },
   },
   mainContainer: {
@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       paddingTop: "5%",
+      paddingBottom: "5vh",
     },
     overflowY: "auto",
     animation: `$mode 500ms`,
@@ -78,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       width: 350,
       minHeight: 230,
+      marginTop: theme.spacing(1),
     },
   },
   image: {
@@ -85,10 +87,22 @@ const useStyles = makeStyles((theme) => ({
     height: 330,
     [theme.breakpoints.down("xs")]: { display: "none" },
   },
+  web: {
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+  },
   cardWrapper: {
     marginTop: 30,
     [theme.breakpoints.down("sm")]: {
       marginTop: 20,
+    },
+  },
+  title: {
+    fontWeight: "bold",
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
     },
   },
 }));
@@ -121,10 +135,11 @@ export default function Resume() {
                     src={`/image/${item.mobile}`}
                     className={classes.image}
                   />
+                  <img src={`/image/${item.web}`} className={classes.web} />
                 </Grid>
                 <Grid item lg={7} md={7} sm={7} xl={12}>
                   <CardContent>
-                    <Typography variant="h6" style={{ fontWeight: "bold" }}>
+                    <Typography variant="h6" className={classes.title}>
                       {item.title}
                     </Typography>
                     <Typography
