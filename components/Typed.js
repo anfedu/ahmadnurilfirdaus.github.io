@@ -23,7 +23,7 @@ export default function index() {
 
   const displayTest = [
     "Hello World :) ^1000",
-    "My Name is Nuril ^1000",
+    "My name is Nuril ^1000",
     "Welcome to my digital home ^1000",
   ];
   return (
