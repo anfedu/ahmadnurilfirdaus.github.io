@@ -154,8 +154,9 @@ export default function Footer() {
           variant="outlined"
           label={
             <>
-              {iconArray.map((item) => (
+              {iconArray.map((item, key) => (
                 <IconButton
+                  key={key}
                   className={item.class}
                   component={Link}
                   href={`${item.link}`}
