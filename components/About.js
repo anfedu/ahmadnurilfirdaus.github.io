@@ -19,16 +19,14 @@ const experience = [
   {
     year: "2018",
     title: "Physics Teacher",
-    body:
-      "Unacademy is an Indian online education technology company based in Bangalore. It was originally created as a YouTube channel in 2010 by Gaurav Munjal (wikipedia), My experience is as physics teacher in",
+    body: "Unacademy is an Indian online education technology company based in Bangalore. It was originally created as a YouTube channel in 2010 by Gaurav Munjal (wikipedia), My experience is as physics teacher in",
     link: "https://unacademy.com/lesson/letihan-soal-3/4DT1HCL7",
     linkTitle: "unacademy",
   },
   {
     year: "2020",
     title: "Full Stack Developer",
-    body:
-      "Mejik utama sugiharta is software house company based in south of jakarta, My work in this company as front end developer for three month, you can see the company profile on ",
+    body: "Mejik utama sugiharta is software house company based in south of jakarta, My work in this company as front end developer for three month, you can see the company profile on ",
     link: "https://microgen.mejik.id/",
     linkTitle: "mejik",
   },
@@ -36,20 +34,16 @@ const experience = [
 
 const about = [
   {
-    body:
-      "My name is Ahmad Nuril Firdaus a web and mobile developer since 2020",
+    body: "My name is Ahmad Nuril Firdaus a web developer since 2020",
   },
   {
-    body:
-      "I was born in Jember East Java, I studied and earned a bachelor of physics education at the university of Jember",
+    body: "I was born in Jember East Java, I studied and earned a bachelor of physics education at the university of Jember",
   },
   {
-    body:
-      "In 2020 I took coding training as a full stack javascript, Finally I love everything about javascript",
+    body: "In 2020 I took coding training as a full stack javascript, Finally I love everything about javascript",
   },
   {
-    body:
-      "It's fun to build apps with modern tools like react js, next js, react native, Node js, express js, graphql, mongo db, apollo and many more",
+    body: "It's fun to build apps with modern tools like react js, next js, react native, Node js, express js, graphql, mongo db, apollo and many more",
   },
 ];
 
