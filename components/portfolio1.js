@@ -130,14 +130,14 @@ export default function Resume() {
           >
             <Card className={classes.card}>
               <Grid container spacing={0}>
-                <Grid item lg={5} md={5} sm={5} xl={12}>
+                <Grid item lg={5} md={5} sm={5}>
                   <img
                     src={`/image/${item.mobile}`}
                     className={classes.image}
                   />
                   <img src={`/image/${item.web}`} className={classes.web} />
                 </Grid>
-                <Grid item lg={7} md={7} sm={7} xl={12}>
+                <Grid item lg={7} md={7} sm={7}>
                   <CardContent>
                     <Typography variant="h6" className={classes.title}>
                       {item.title}

@@ -15,11 +15,6 @@ const useStyles = makeStyles(() => ({
     marginBottom: 20,
     animation: `$skeletons 700ms`,
   },
-  icon: {
-    width: 100,
-    height: 100,
-    animation: `$myEffect 2000ms infinite`,
-  },
   cardIcon: {
     position: "absolute",
     zIndex: 9999,
@@ -36,6 +31,11 @@ const useStyles = makeStyles(() => ({
     "0%": {
       width: 0,
     },
+  },
+  icon: {
+    width: 100,
+    height: 100,
+    animation: `$myEffect 2000ms infinite`,
   },
   "@keyframes myEffect": {
     "0%": {
@@ -54,15 +54,15 @@ export default function MessageSkeleton({ body, color }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Card
+      {/*<Card
         className={classes.cardIcon}
         style={{
           color: Object.keys(body).length > 0 ? color : "#0088cc",
         }}
       >
         <TelegramIcon className={classes.icon} />
-      </Card>
-      <Skeleton className={classes.skeleton} style={{ width: 80 }}  />
+      </Card>*/}
+      <Skeleton className={classes.skeleton} style={{ width: 80 }} />
       <Skeleton className={classes.skeleton} style={{ width: 245 }} />
       <Skeleton className={classes.skeleton} style={{ width: 400 }} />
       <Skeleton

@@ -23,7 +23,7 @@ const useStyles = makeStyles((themes) => ({
   mainContainer: {
     borderRadius: 0,
     overflowY: "auto",
-    paddingTop: "5vh",
+    // paddingTop: "5vh",
     boxShadow: "none",
     opacity: 0.9,
     height: "85vh",
@@ -45,6 +45,8 @@ const useStyles = makeStyles((themes) => ({
     [themes.breakpoints.down("xs")]: {
       minHeight: "100vh",
     },
+    display: "flex",
+    alignItems: "center",
   },
   mobile: {
     [themes.breakpoints.up("lg")]: {
