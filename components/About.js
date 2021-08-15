@@ -162,7 +162,7 @@ const useStyles = makeStyles((themes) => ({
     paddingBottom: 20,
     // overflowY: "auto",
     animation: `$mode 500ms`,
-    maxHeight: "85vh",
+    maxHeight: "100vh",
     boxShadow: "none",
     opacity: 0.9,
     "&::-webkit-scrollbar": {
