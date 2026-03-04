@@ -101,12 +101,11 @@ const headerVariants = {
 };
 
 const itemVariants = (i) => ({
-  hidden: { opacity: 0, y: 20, scale: 0.97 },
+  hidden: { opacity: 0, x: -24 },
   visible: {
     opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] },
+    x: 0,
+    transition: { duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
   },
 });
 
@@ -133,13 +132,15 @@ export default function ExpSection() {
           </div>
         </InView>
 
-        <div className={styles.timelineGrid}>
+        <div className={styles.timeline}>
+          <div className={styles.timelineLine} />
           {experiences.map((exp, i) => (
-            <InView key={exp.title + i} variants={itemVariants(i)} threshold={0.08}>
-              <div
-                className={styles.timelineItem}
-                style={{ "--exp-color": typeColor[exp.type] }}
-              >
+            <InView key={exp.title + i} variants={itemVariants(i)} threshold={0.1}>
+              <div className={styles.timelineItem}>
+                <div
+                  className={styles.timelineDot}
+                  style={{ borderColor: typeColor[exp.type] }}
+                />
                 <div
                   className={styles.timelineYear}
                   style={{ color: typeColor[exp.type] }}
@@ -147,10 +148,7 @@ export default function ExpSection() {
                   {exp.year}
                 </div>
                 <div className={styles.timelineTitle}>{exp.title}</div>
-                <div
-                  className={styles.timelineCompany}
-                  style={{ color: typeColor[exp.type] }}
-                >
+                <div className={styles.timelineCompany}>
                   {exp.company}
                   {exp.location && (
                     <span className={styles.timelineLocation}>
