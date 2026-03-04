@@ -1,11 +1,5 @@
-import React from "react";
-import Layout from "../components/Layout";
-import Typed from "../components/Typed";
+import LandingPage from "../components/landing/LandingPage";
 
 export default function Home() {
-  return (
-    <Layout>
-      <Typed />
-    </Layout>
-  );
+  return <LandingPage />;
 }
