@@ -1,30 +1,42 @@
 import React from "react";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiGraphql,
+  SiMongodb,
+  SiApollographql,
+  SiJavascript,
+  SiLess,
+  SiMui,
+  SiGit,
+  SiGithub,
+  SiTypescript,
+} from "react-icons/si";
 import styles from "../../styles/landing.module.css";
 import InView from "./InView";
 
 const skills = [
-  { icon: "⚛️", name: "React.js", category: "Frontend" },
-  { icon: "▲", name: "Next.js", category: "Frontend" },
-  { icon: "📱", name: "React Native", category: "Mobile" },
-  { icon: "🟩", name: "Node.js", category: "Backend" },
-  { icon: "🚂", name: "Express.js", category: "Backend" },
-  { icon: "🔷", name: "GraphQL", category: "API" },
-  { icon: "🍃", name: "MongoDB", category: "Database" },
-  { icon: "🚀", name: "Apollo", category: "API" },
-  { icon: "💛", name: "JavaScript", category: "Language" },
-  { icon: "🎨", name: "CSS / LESS", category: "Styling" },
-  { icon: "🖼️", name: "Material UI", category: "UI Library" },
-  { icon: "🐙", name: "Git & GitHub", category: "Tools" },
+  { Icon: SiReact,        name: "React.js",      category: "Frontend",  color: "#61DAFB" },
+  { Icon: SiNextdotjs,    name: "Next.js",        category: "Frontend",  color: "#FFFFFF" },
+  { Icon: SiReact,        name: "React Native",   category: "Mobile",    color: "#61DAFB" },
+  { Icon: SiNodedotjs,    name: "Node.js",        category: "Backend",   color: "#339933" },
+  { Icon: SiExpress,      name: "Express.js",     category: "Backend",   color: "#FFFFFF" },
+  { Icon: SiGraphql,      name: "GraphQL",        category: "API",       color: "#E10098" },
+  { Icon: SiMongodb,      name: "MongoDB",        category: "Database",  color: "#47A248" },
+  { Icon: SiApollographql,name: "Apollo",         category: "API",       color: "#7B69EE" },
+  { Icon: SiJavascript,   name: "JavaScript",     category: "Language",  color: "#F7DF1E" },
+  { Icon: SiTypescript,   name: "TypeScript",     category: "Language",  color: "#3178C6" },
+  { Icon: SiLess,         name: "CSS / LESS",     category: "Styling",   color: "#1D365D" },
+  { Icon: SiMui,          name: "Material UI",    category: "UI Library",color: "#007FFF" },
+  { Icon: SiGit,          name: "Git",            category: "Tools",     color: "#F05032" },
+  { Icon: SiGithub,       name: "GitHub",         category: "Tools",     color: "#FFFFFF" },
 ];
 
 const headerVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-};
-
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.07 } },
 };
 
 const cardVariants = {
@@ -54,19 +66,38 @@ export default function SkillsSection() {
           </div>
         </InView>
 
-        <InView variants={containerVariants} threshold={0.1}>
-          <div className={styles.skillsGrid}>
-            {skills.map((skill) => (
-              <InView key={skill.name} variants={cardVariants} threshold={0.1}>
-                <div className={styles.skillCard}>
-                  <span className={styles.skillIcon}>{skill.icon}</span>
-                  <div className={styles.skillName}>{skill.name}</div>
-                  <div className={styles.skillCategory}>{skill.category}</div>
-                </div>
-              </InView>
-            ))}
-          </div>
-        </InView>
+        <div className={styles.skillsGrid}>
+          {skills.map((skill, i) => (
+            <InView
+              key={skill.name + i}
+              variants={{
+                hidden: { opacity: 0, y: 24, scale: 0.95 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    duration: 0.45,
+                    delay: i * 0.055,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                },
+              }}
+              threshold={0.05}
+            >
+              <div
+                className={styles.skillCard}
+                style={{ "--skill-color": skill.color }}
+              >
+                <span className={styles.skillIcon} style={{ color: skill.color }}>
+                  <skill.Icon size={34} />
+                </span>
+                <div className={styles.skillName}>{skill.name}</div>
+                <div className={styles.skillCategory}>{skill.category}</div>
+              </div>
+            </InView>
+          ))}
+        </div>
       </div>
     </section>
   );
