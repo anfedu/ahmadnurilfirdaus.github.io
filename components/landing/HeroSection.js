@@ -64,10 +64,10 @@ export default function HeroSection() {
         >
           <Typed
             strings={[
-              "Full Stack Developer",
-              "React &amp; Next.js Enthusiast",
-              "JavaScript Lover",
-              "Web Developer",
+              "Senior Frontend Developer",
+              "React.js &amp; Next.js Specialist",
+              "4+ Years of Experience",
+              "Building for Startups &amp; Gov&apos;t",
             ]}
             typeSpeed={60}
             backSpeed={40}

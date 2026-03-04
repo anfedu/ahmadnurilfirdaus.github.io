@@ -52,32 +52,37 @@ export default function AboutSection() {
               <div className={styles.sectionDivider} />
             </div>
             <p className={styles.aboutTextPara}>
-              My name is <strong>Ahmad Nuril Firdaus</strong>, a passionate
-              web developer since 2020. I was born in{" "}
-              <strong>Jember, East Java</strong> and earned my bachelor&apos;s
-              degree in Physics Education at the{" "}
-              <strong>University of Jember</strong>.
+              I&apos;m <strong>Ahmad Nuril Firdaus</strong>, a{" "}
+              <strong>Senior Frontend Developer</strong> with 4+ years of
+              experience specializing in building dynamic, high-performance
+              web applications using <strong>React.js</strong> and{" "}
+              <strong>Next.js</strong>.
             </p>
             <p className={styles.aboutTextPara}>
-              In 2020, I took intensive coding training in{" "}
-              <strong>Full Stack JavaScript</strong> and fell completely in
-              love with the ecosystem. Ever since, building modern web and
-              mobile apps has been both my passion and my profession.
+              I have successfully delivered projects for{" "}
+              <strong>startups and government agencies</strong> — including
+              PT Pertamina Training &amp; Consulting — ensuring scalable,
+              user-friendly, and visually appealing interfaces.
             </p>
             <p className={styles.aboutTextPara}>
-              I enjoy working with <strong>React.js</strong>,{" "}
-              <strong>Next.js</strong>, <strong>React Native</strong>,{" "}
-              <strong>Node.js</strong>, and modern back-end tools like GraphQL
-              and MongoDB to craft seamless, performant applications.
+              Born in <strong>Jember, East Java</strong>, I hold a
+              bachelor&apos;s degree in Physics Education from the{" "}
+              <strong>University of Jember</strong>. My analytical background
+              as a physics teacher shaped the way I approach complex
+              engineering problems.
             </p>
             <div className={styles.aboutDetails}>
               <div className={styles.aboutDetailItem}>
                 <span className={styles.aboutDetailLabel}>Location</span>
-                <span className={styles.aboutDetailValue}>Indonesia</span>
+                <span className={styles.aboutDetailValue}>Jember, East Java</span>
               </div>
               <div className={styles.aboutDetailItem}>
-                <span className={styles.aboutDetailLabel}>Education</span>
-                <span className={styles.aboutDetailValue}>Physics Education — UNEJ</span>
+                <span className={styles.aboutDetailLabel}>Current Role</span>
+                <span className={styles.aboutDetailValue}>Senior Frontend Dev @ Pertamina</span>
+              </div>
+              <div className={styles.aboutDetailItem}>
+                <span className={styles.aboutDetailLabel}>Experience</span>
+                <span className={styles.aboutDetailValue}>4+ Years</span>
               </div>
               <div className={styles.aboutDetailItem}>
                 <span className={styles.aboutDetailLabel}>Email</span>

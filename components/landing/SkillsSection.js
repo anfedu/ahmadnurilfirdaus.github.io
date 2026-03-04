@@ -8,30 +8,31 @@ import {
   SiMongodb,
   SiApollographql,
   SiJavascript,
-  SiLess,
+  SiTypescript,
+  SiTailwindcss,
+  SiChakraui,
   SiMui,
   SiGit,
   SiGithub,
-  SiTypescript,
 } from "react-icons/si";
 import styles from "../../styles/landing.module.css";
 import InView from "./InView";
 
 const skills = [
-  { Icon: SiReact,        name: "React.js",      category: "Frontend",  color: "#61DAFB" },
-  { Icon: SiNextdotjs,    name: "Next.js",        category: "Frontend",  color: "#FFFFFF" },
-  { Icon: SiReact,        name: "React Native",   category: "Mobile",    color: "#61DAFB" },
-  { Icon: SiNodedotjs,    name: "Node.js",        category: "Backend",   color: "#339933" },
-  { Icon: SiExpress,      name: "Express.js",     category: "Backend",   color: "#FFFFFF" },
-  { Icon: SiGraphql,      name: "GraphQL",        category: "API",       color: "#E10098" },
-  { Icon: SiMongodb,      name: "MongoDB",        category: "Database",  color: "#47A248" },
-  { Icon: SiApollographql,name: "Apollo",         category: "API",       color: "#7B69EE" },
-  { Icon: SiJavascript,   name: "JavaScript",     category: "Language",  color: "#F7DF1E" },
-  { Icon: SiTypescript,   name: "TypeScript",     category: "Language",  color: "#3178C6" },
-  { Icon: SiLess,         name: "CSS / LESS",     category: "Styling",   color: "#1D365D" },
-  { Icon: SiMui,          name: "Material UI",    category: "UI Library",color: "#007FFF" },
-  { Icon: SiGit,          name: "Git",            category: "Tools",     color: "#F05032" },
-  { Icon: SiGithub,       name: "GitHub",         category: "Tools",     color: "#FFFFFF" },
+  { Icon: SiReact,         name: "React.js",     category: "Frontend",  color: "#61DAFB" },
+  { Icon: SiNextdotjs,     name: "Next.js",      category: "Frontend",  color: "#FFFFFF" },
+  { Icon: SiJavascript,    name: "JavaScript",   category: "Language",  color: "#F7DF1E" },
+  { Icon: SiTypescript,    name: "TypeScript",   category: "Language",  color: "#3178C6" },
+  { Icon: SiNodedotjs,     name: "Node.js",      category: "Backend",   color: "#339933" },
+  { Icon: SiExpress,       name: "Express.js",   category: "Backend",   color: "#FFFFFF" },
+  { Icon: SiGraphql,       name: "GraphQL",      category: "API",       color: "#E10098" },
+  { Icon: SiMongodb,       name: "MongoDB",      category: "Database",  color: "#47A248" },
+  { Icon: SiApollographql, name: "Apollo",       category: "API",       color: "#7B69EE" },
+  { Icon: SiTailwindcss,   name: "Tailwind CSS", category: "Styling",   color: "#06B6D4" },
+  { Icon: SiChakraui,      name: "Chakra UI",    category: "UI Library",color: "#319795" },
+  { Icon: SiMui,           name: "Material UI",  category: "UI Library",color: "#007FFF" },
+  { Icon: SiGit,           name: "Git",          category: "Tools",     color: "#F05032" },
+  { Icon: SiGithub,        name: "GitHub",       category: "Tools",     color: "#FFFFFF" },
 ];
 
 const headerVariants = {
