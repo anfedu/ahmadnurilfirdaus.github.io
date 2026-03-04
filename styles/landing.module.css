@@ -495,64 +495,72 @@
 }
 
 /* ---- EXPERIENCE ---- */
-.timeline {
-  position: relative;
-  padding-left: 40px;
-}
-.timelineLine {
-  position: absolute;
-  left: 6px;
-  top: 8px;
-  width: 2px;
-  height: calc(100% - 16px);
-  background: linear-gradient(to bottom, #39c869 0%, #039be5 60%, transparent 100%);
-  border-radius: 1px;
+.timelineGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 .timelineItem {
+  background: rgba(22, 27, 34, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 24px 22px 20px;
   position: relative;
-  margin-bottom: 52px;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  overflow: hidden;
 }
-.timelineItem:last-child {
-  margin-bottom: 0;
-}
-.timelineDot {
+.timelineItem::before {
+  content: '';
   position: absolute;
-  left: -37px;
-  top: 4px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #0d1117;
-  border: 2px solid #39c869;
-  box-shadow: 0 0 0 4px rgba(57, 200, 105, 0.12);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--exp-color, #39c869);
+  border-radius: 3px 0 0 3px;
+}
+.timelineItem:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
 }
 .timelineYear {
-  font-size: 0.75rem;
-  color: #39c869;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.timelineYear::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--exp-color, #39c869);
+  flex-shrink: 0;
 }
 .timelineTitle {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #e6edf3;
-  margin-bottom: 3px;
-  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+  line-height: 1.3;
 }
 .timelineCompany {
-  font-size: 0.9rem;
-  color: #039be5;
+  font-size: 0.845rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .timelineDesc {
-  font-size: 0.9rem;
+  font-size: 0.845rem;
   color: #8b949e;
-  line-height: 1.75;
-  max-width: 560px;
-  margin-bottom: 12px;
+  line-height: 1.72;
+  margin-bottom: 14px;
 }
 .timelineLocation {
   font-size: 0.85rem;
@@ -705,6 +713,12 @@
   }
   .sectionDesc {
     max-width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .timelineGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 @media (max-width: 768px) {
