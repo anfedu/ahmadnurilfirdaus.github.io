@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../../styles/landing.module.css";
 import InView from "./InView";
+import { SiGmail, SiGithub } from "react-icons/si";
+import { FiDownload } from "react-icons/fi";
 
 const headerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -52,7 +54,7 @@ export default function ContactSection() {
                 className={styles.contactLinkItem}
                 href="mailto:firdausnurilahmad@gmail.com"
               >
-                ✉️ Email
+                <SiGmail style={{ color: "#EA4335" }} /> Email
               </a>
               <a
                 className={styles.contactLinkItem}
@@ -60,7 +62,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
               >
-                🐙 GitHub
+                <SiGithub /> GitHub
               </a>
               <a
                 className={styles.contactLinkItem}
@@ -69,7 +71,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
               >
-                📄 Download CV
+                <FiDownload /> Download CV
               </a>
             </div>
           </div>

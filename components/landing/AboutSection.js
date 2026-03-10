@@ -32,7 +32,7 @@ export default function AboutSection() {
                 <div className={styles.aboutImageGradientBorder} />
                 <img
                   className={styles.aboutImage}
-                  src="/image/profile.jpg"
+                  src="/seacrop.jpeg"
                   alt="Ahmad Nuril Firdaus"
                 />
                 <div className={styles.aboutImageBadge}>

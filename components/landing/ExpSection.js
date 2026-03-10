@@ -97,7 +97,11 @@ const experiences = [
 
 const headerVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const itemVariants = (i) => ({
@@ -134,8 +138,13 @@ export default function ExpSection() {
 
         <div className={styles.timeline}>
           <div className={styles.timelineLine} />
-          {experiences.map((exp, i) => (
-            <InView key={exp.title + i} variants={itemVariants(i)} threshold={0.1}>
+          {experiences.reverse().map((exp, i) => (
+            <InView
+              key={exp.title + i}
+              variants={itemVariants(i)}
+              threshold={0.1}
+              style={{ marginBottom: 30 }}
+            >
               <div className={styles.timelineItem}>
                 <div
                   className={styles.timelineDot}
@@ -152,7 +161,8 @@ export default function ExpSection() {
                   {exp.company}
                   {exp.location && (
                     <span className={styles.timelineLocation}>
-                      {" · "}{exp.location}
+                      {" · "}
+                      {exp.location}
                     </span>
                   )}
                 </div>
