@@ -14,6 +14,8 @@ import {
   SiMui,
   SiGit,
   SiGithub,
+  SiGitlab,
+  SiGnubash,
   SiReactquery,
   SiStrapi,
   SiPostgresql,
@@ -63,6 +65,8 @@ const skills = [
   // Tools
   { Icon: SiGit,           name: "Git",          category: "Tools",           color: "#F05032" },
   { Icon: SiGithub,        name: "GitHub",       category: "Tools",           color: "#FFFFFF" },
+  { Icon: SiGitlab,        name: "GitLab",       category: "Tools",           color: "#FC6D26" },
+  { Icon: SiGnubash,       name: "CLI",          category: "Tools",           color: "#4EAA25" },
   { Icon: SiDocker,        name: "Docker",       category: "Tools",           color: "#2496ED" },
   // Project Management
   { Icon: SiClickup,       name: "ClickUp",      category: "Project Mgmt",    color: "#7B68EE" },

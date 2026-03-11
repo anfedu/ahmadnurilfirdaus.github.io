@@ -4,22 +4,19 @@ import InView from "./InView";
 
 const projects = [
   {
-    title: "Social App",
-    image: "/image/socialappweb.png",
-    description:
-      "A full-featured social media application with real-time feed, user profiles, and interactive posts. Built with a modern React front-end and Node.js back-end.",
-    tags: ["React.js", "Node.js", "MongoDB", "GraphQL"],
-  },
-  {
     title: "DeweTour",
-    image: "/image/dewetourweb.png",
+    type: "practice",
+    image: null,
+    url: "https://dewetour.vercel.app",
     description:
       "A travel booking platform that lets users explore and book tour packages. Features intuitive browsing, booking flow, and a responsive mobile experience.",
     tags: ["React Native", "Next.js", "Express", "REST API"],
   },
   {
     title: "The Journey",
-    image: "/image/thejourneyweb.png",
+    type: "practice",
+    image: null,
+    url: "https://thejourney.vercel.app",
     description:
       "A travel blog and journal web application where users can document their adventures with rich content, photos, and stories from around the world.",
     tags: ["Next.js", "Apollo", "GraphQL", "MongoDB"],
@@ -42,6 +39,7 @@ const projects = [
   },
   {
     title: "Ancorair",
+    type: "project",
     image: null,
     url: "https://ancorair.com",
     description:
@@ -50,6 +48,7 @@ const projects = [
   },
   {
     title: "Halonora",
+    type: "project",
     image: null,
     url: "https://halonora.id",
     description:
@@ -58,6 +57,7 @@ const projects = [
   },
   {
     title: "Multiwahana Tama Logistik",
+    type: "project",
     image: null,
     url: "https://multiwahanatamalogistik.co.id",
     description:
@@ -172,7 +172,16 @@ export default function ProjectsSection() {
                   )}
                 </div>
                 <div className={styles.projectBody}>
-                  <div className={styles.projectTitle}>{project.title}</div>
+                  <div className={styles.projectTitleRow}>
+                    <div className={styles.projectTitle}>{project.title}</div>
+                    {project.type === "practice" ? (
+                      <span className={styles.badgePractice}>Practice</span>
+                    ) : project.type === "project" ? (
+                      <span className={styles.badgeProject}>Project</span>
+                    ) : (
+                      <span className={styles.badgeWork}>Work</span>
+                    )}
+                  </div>
                   <p className={styles.projectDesc}>{project.description}</p>
                   <div className={styles.projectTags}>
                     {project.tags.map((tag) => (

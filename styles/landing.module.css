@@ -484,11 +484,49 @@
   display: flex;
   flex-direction: column;
 }
+.projectTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
 .projectTitle {
   font-size: 1.08rem;
   font-weight: 700;
   color: #e6edf3;
-  margin-bottom: 8px;
+}
+.badgePractice {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: rgba(255, 193, 7, 0.12);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.badgeWork {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: rgba(57, 200, 105, 0.1);
+  color: #39c869;
+  border: 1px solid rgba(57, 200, 105, 0.25);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.badgeProject {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: rgba(99, 179, 237, 0.1);
+  color: #63b3ed;
+  border: 1px solid rgba(99, 179, 237, 0.25);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .projectDesc {
   font-size: 0.875rem;
