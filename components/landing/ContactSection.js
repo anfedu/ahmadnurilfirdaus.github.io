@@ -66,7 +66,7 @@ export default function ContactSection() {
               </a>
               <a
                 className={styles.contactLinkItem}
-                href="/cv.pdf"
+                href="/resume.pdf"
                 download
                 target="_blank"
                 rel="noreferrer"

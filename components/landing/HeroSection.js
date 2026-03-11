@@ -83,17 +83,21 @@ export default function HeroSection() {
           animate="visible"
           variants={makeVariant(0.65)}
         >
-          <a className={styles.btnPrimary} href="#about" onClick={scrollToAbout}>
+          <a
+            className={styles.btnPrimary}
+            href="#about"
+            onClick={scrollToAbout}
+          >
             About Me ↓
           </a>
           <a
             className={styles.btnSecondary}
-            href="/cv.pdf"
+            href="/resume.pdf"
             download
             target="_blank"
             rel="noreferrer"
           >
-            Download CV ↗
+            Resume ↗
           </a>
         </motion.div>
       </div>

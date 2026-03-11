@@ -50,7 +50,7 @@ export default function LandingNav() {
         </ul>
         <a
           className={styles.navCta}
-          href="/cv.pdf"
+          href="/resume.pdf"
           download
           target="_blank"
           rel="noreferrer"

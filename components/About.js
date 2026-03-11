@@ -38,10 +38,10 @@ export default function Resume() {
                 className={classes.buttonCv}
                 variant="contained"
                 download
-                href="/cv.pdf"
+                href="/resume.pdf"
                 color="secondary"
               >
-                Download CV
+                Resume
               </Button>
             </Grow>
           </Grid>
