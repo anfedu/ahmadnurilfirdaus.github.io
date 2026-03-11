@@ -55,7 +55,7 @@ export default function LandingNav() {
           target="_blank"
           rel="noreferrer"
         >
-          Download CV
+          Resume
         </a>
       </div>
     </nav>
