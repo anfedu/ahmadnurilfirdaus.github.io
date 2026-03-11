@@ -94,7 +94,7 @@
   justify-content: center;
   text-align: center;
   position: relative;
-  padding: 80px 24px 0;
+  padding: 10px 24px 0;
 }
 .heroGrid {
   position: absolute;
@@ -146,7 +146,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   color: #39c869;
-  margin-bottom: 28px;
+  margin-bottom: 8px;
   background: rgba(57, 200, 105, 0.06);
 }
 .heroDot {
@@ -159,7 +159,7 @@
 .heroGreeting {
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: #8b949e;
-  margin-bottom: 3px;
+  /* margin-bottom: 3px; */
   font-weight: 400;
 }
 .heroName {

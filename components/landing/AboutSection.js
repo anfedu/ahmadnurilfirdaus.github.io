@@ -36,7 +36,7 @@ export default function AboutSection() {
                   alt="Ahmad Nuril Firdaus"
                 />
                 <div className={styles.aboutImageBadge}>
-                  4+ Years<br />Experience
+                  5+ Years<br />Experience
                 </div>
               </div>
             </div>
@@ -53,23 +53,22 @@ export default function AboutSection() {
             </div>
             <p className={styles.aboutTextPara}>
               I&apos;m <strong>Ahmad Nuril Firdaus</strong>, a{" "}
-              <strong>Senior Frontend Developer</strong> with 4+ years of
-              experience specializing in building dynamic, high-performance
-              web applications using <strong>React.js</strong> and{" "}
-              <strong>Next.js</strong>.
+              <strong>Senior Frontend Developer</strong> with over{" "}
+              <strong>5 years of experience</strong> crafting fast, scalable,
+              and visually compelling web applications with{" "}
+              <strong>React.js</strong> and <strong>Next.js</strong>.
             </p>
             <p className={styles.aboutTextPara}>
-              I have successfully delivered projects for{" "}
-              <strong>startups and government agencies</strong> — including
-              PT Pertamina Training &amp; Consulting — ensuring scalable,
-              user-friendly, and visually appealing interfaces.
+              From <strong>high-growth startups to enterprise-scale government
+              projects</strong> — including PT Pertamina Training &amp; Consulting
+              — I&apos;ve consistently delivered products that balance clean
+              architecture, pixel-perfect UI, and real business impact.
             </p>
             <p className={styles.aboutTextPara}>
-              Born in <strong>Jember, East Java</strong>, I hold a
-              bachelor&apos;s degree in Physics Education from the{" "}
-              <strong>University of Jember</strong>. My analytical background
-              as a physics teacher shaped the way I approach complex
-              engineering problems.
+              With a degree in Physics Education from the{" "}
+              <strong>University of Jember</strong>, I bring an analytical
+              mindset to every problem I solve — breaking down complexity
+              and engineering solutions that just <em>work</em>.
             </p>
             <div className={styles.aboutDetails}>
               <div className={styles.aboutDetailItem}>
@@ -82,7 +81,7 @@ export default function AboutSection() {
               </div>
               <div className={styles.aboutDetailItem}>
                 <span className={styles.aboutDetailLabel}>Experience</span>
-                <span className={styles.aboutDetailValue}>4+ Years</span>
+                <span className={styles.aboutDetailValue}>5+ Years</span>
               </div>
               <div className={styles.aboutDetailItem}>
                 <span className={styles.aboutDetailLabel}>Email</span>

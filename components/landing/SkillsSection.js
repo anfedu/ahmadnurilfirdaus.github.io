@@ -14,7 +14,16 @@ import {
   SiMui,
   SiGit,
   SiGithub,
+  SiReactquery,
+  SiStrapi,
+  SiPostgresql,
 } from "react-icons/si";
+
+const HeroUIIcon = ({ size = 34 }) => (
+  <span style={{ fontSize: size * 0.55, fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1 }}>
+    Hero<span style={{ opacity: 0.6 }}>UI</span>
+  </span>
+);
 import styles from "../../styles/landing.module.css";
 import InView from "./InView";
 
@@ -33,6 +42,10 @@ const skills = [
   { Icon: SiMui,           name: "Material UI",  category: "UI Library",color: "#007FFF" },
   { Icon: SiGit,           name: "Git",          category: "Tools",     color: "#F05032" },
   { Icon: SiGithub,        name: "GitHub",       category: "Tools",     color: "#FFFFFF" },
+  { Icon: SiReactquery,    name: "React Query",  category: "Data Fetching", color: "#FF4154" },
+  { Icon: SiStrapi,        name: "Strapi",       category: "CMS",       color: "#4945FF" },
+  { Icon: SiPostgresql,    name: "PostgreSQL",   category: "Database",  color: "#336791" },
+  { Icon: HeroUIIcon,      name: "HeroUI",       category: "UI Library",color: "#006FEE" },
 ];
 
 const headerVariants = {
