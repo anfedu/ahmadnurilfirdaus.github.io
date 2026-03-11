@@ -24,7 +24,101 @@ const projects = [
       "A travel blog and journal web application where users can document their adventures with rich content, photos, and stories from around the world.",
     tags: ["Next.js", "Apollo", "GraphQL", "MongoDB"],
   },
+  {
+    title: "Dumbways",
+    image: null,
+    url: "https://dumbways.id",
+    description:
+      "Coding bootcamp platform connecting aspiring developers with structured learning paths, mentors, and career resources to launch their tech careers.",
+    tags: ["React.js", "Next.js", "Node.js"],
+  },
+  {
+    title: "Allcare",
+    image: null,
+    url: "https://allcare.id",
+    description:
+      "Healthcare platform providing accessible medical services, telemedicine, and health management tools for patients and healthcare providers.",
+    tags: ["React.js", "TypeScript", "REST API"],
+  },
+  {
+    title: "Ancorair",
+    image: null,
+    url: "https://ancorair.com",
+    description:
+      "Aviation and air services platform offering streamlined booking, fleet management, and operational tools for the airline industry.",
+    tags: ["Next.js", "Node.js", "PostgreSQL"],
+  },
+  {
+    title: "Halonora",
+    image: null,
+    url: "https://halonora.id",
+    description:
+      "Digital platform delivering innovative solutions with a focus on user experience and modern web technologies for the Indonesian market.",
+    tags: ["React.js", "Next.js", "GraphQL"],
+  },
+  {
+    title: "Multiwahana Tama Logistik",
+    image: null,
+    url: "https://multiwahanatamalogistik.co.id",
+    description:
+      "Logistics and transportation platform providing end-to-end freight management, delivery tracking, and supply chain solutions across Indonesia.",
+    tags: ["Next.js", "React.js", "REST API"],
+  },
 ];
+
+const placeholderColors = [
+  ["#1a1a2e", "#16213e"],
+  ["#0f3460", "#533483"],
+  ["#1b4332", "#2d6a4f"],
+  ["#370617", "#6a040f"],
+];
+
+function ProjectImagePlaceholder({ title, index }) {
+  const [bg1, bg2] = placeholderColors[index % placeholderColors.length];
+  const initials = title
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        background: `linear-gradient(135deg, ${bg1} 0%, ${bg2} 100%)`,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 8,
+      }}
+    >
+      <span
+        style={{
+          fontSize: 48,
+          fontWeight: 800,
+          color: "rgba(255,255,255,0.15)",
+          letterSpacing: "-0.04em",
+          lineHeight: 1,
+        }}
+      >
+        {initials}
+      </span>
+      <span
+        style={{
+          fontSize: 13,
+          fontWeight: 600,
+          color: "rgba(255,255,255,0.35)",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+        }}
+      >
+        {title}
+      </span>
+    </div>
+  );
+}
 
 const headerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -61,13 +155,21 @@ export default function ProjectsSection() {
         <div className={styles.projectsGrid}>
           {projects.map((project, i) => (
             <InView key={project.title} variants={cardVariants(i)} threshold={0.1}>
-              <div className={styles.projectCard}>
+              <div
+                className={styles.projectCard}
+                style={{ cursor: project.url ? "pointer" : "default" }}
+                onClick={() => project.url && window.open(project.url, "_blank")}
+              >
                 <div className={styles.projectImageWrap}>
-                  <img
-                    className={styles.projectImage}
-                    src={project.image}
-                    alt={project.title}
-                  />
+                  {project.image ? (
+                    <img
+                      className={styles.projectImage}
+                      src={project.image}
+                      alt={project.title}
+                    />
+                  ) : (
+                    <ProjectImagePlaceholder title={project.title} index={i} />
+                  )}
                 </div>
                 <div className={styles.projectBody}>
                   <div className={styles.projectTitle}>{project.title}</div>
