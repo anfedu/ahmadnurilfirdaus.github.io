@@ -58,7 +58,7 @@ export default function ContactSection() {
               </a>
               <a
                 className={styles.contactLinkItem}
-                href="https://github.com/ahmadnurilfirdaus"
+                href="https://github.com/anfedu"
                 target="_blank"
                 rel="noreferrer"
               >
