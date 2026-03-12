@@ -130,7 +130,7 @@ export default function ExpSection() {
             <h2 className={styles.sectionTitle}>Experience & Education</h2>
             <div className={styles.sectionDivider} />
             <p className={styles.sectionDesc}>
-              4+ years delivering web applications for startups and government
+              5+ years delivering web applications for startups and government
               agencies — from physics classroom to Senior Frontend Developer.
             </p>
           </div>

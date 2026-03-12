@@ -6,7 +6,11 @@ import { FiDownload } from "react-icons/fi";
 
 const headerVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const cardVariants = {
@@ -25,13 +29,19 @@ export default function ContactSection() {
       <div className={styles.section}>
         <InView variants={headerVariants} threshold={0.3}>
           <div className={styles.sectionHeader} style={{ textAlign: "center" }}>
-            <div className={styles.sectionLabel} style={{ textAlign: "center" }}>
+            <div
+              className={styles.sectionLabel}
+              style={{ textAlign: "center" }}
+            >
               Get In Touch
             </div>
             <h2 className={styles.sectionTitle} style={{ textAlign: "center" }}>
               Let&apos;s Work Together
             </h2>
-            <div className={styles.sectionDivider} style={{ margin: "14px auto" }} />
+            <div
+              className={styles.sectionDivider}
+              style={{ margin: "14px auto" }}
+            />
           </div>
         </InView>
 
@@ -40,8 +50,8 @@ export default function ContactSection() {
             <div className={styles.contactCardGlow} />
             <p className={styles.contactSubtitle}>
               I&apos;m always open to discussing new projects, creative ideas,
-              or opportunities to be part of your vision. Drop me a message
-              and let&apos;s build something great together.
+              or opportunities to be part of your vision. Drop me a message and
+              let&apos;s build something great together.
             </p>
             <a
               className={styles.contactEmailLink}
@@ -71,7 +81,7 @@ export default function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FiDownload /> Download CV
+                <FiDownload /> Resume
               </a>
             </div>
           </div>
