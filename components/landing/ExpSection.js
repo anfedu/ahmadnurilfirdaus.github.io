@@ -15,7 +15,7 @@ const experiences = [
   },
   {
     type: "work",
-    year: "Jan 2022 – Present",
+    year: "Jan 2022 – Dec 2025",
     title: "Frontend Developer",
     company: "PT Kencana Konsep",
     location: "Kramatjati, Jakarta, Indonesia",
